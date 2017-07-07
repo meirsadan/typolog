@@ -1,0 +1,908 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ 
+ @font-face { font-family: "typologo"; font-style: normal; font-weight: normal; src: url(data:application/font-woff;base64,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); }
+
+h1.typolog-page-title:before {
+	content: "T";
+	font-family: "typologo";
+	margin: 0 0.2em;
+}
+
+.typolog-title:before {
+	content: "T";
+	font-family: "typologo";
+	margin: 0 0.2em;
+}
+
+#toplevel_page_typolog > a.menu-top.toplevel_page_typolog > .wp-menu-image:before {
+	content: "T";
+	font-family: "typologo";
+	font-size: 30px;
+	padding: 0;
+	margin-top: -2px;
+}
+
+#menu-posts-typolog_font > a.menu-top.menu-icon-typolog_font > .wp-menu-image:before {
+	content: "F";
+	font-family: "typologo";
+	font-size: 30px;
+	padding: 0;
+	margin-top: -2px;
+}
+
+.typolog-notice {
+	max-height: 100px;
+	overflow-y: auto;
+}
+
+.dnd-zone {
+	border: 3px dashed #c0c0c0;
+	min-height: 120px;
+	height: 120px;
+	overflow: auto;
+	width: auto;
+	margin: 10px;
+	position: relative;
+}
+
+.dnd-label {
+	position: absolute;
+	top: 30px; left: 0; right: 0; bottom: 0;
+	text-align: center;
+	cursor: default;
+	font-size: 18px;
+	padding: 20px;
+	color: #c0c0c0;
+	pointer-events: none;
+}
+
+.dz-started .dnd-label {
+	display: none;
+}
+
+.dz-preview {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #c0c0c0;
+	padding: 3px 6px;
+	margin: 5px;
+	direction: ltr;
+	color: #888;
+}
+
+.dz-image,
+.dz-success-mark,
+.dz-error-mark {
+	display: none;
+}
+
+.dz-details {
+}
+
+.dz-preview:last-child .dz-details {
+	border: none;
+}
+
+.dz-filename {
+	display: inline-block;
+}
+
+.dz-size {
+	display: inline-block;
+	border-right: 1px solid #c0c0c0;
+	padding-right: 5px;
+}
+
+.dz-processing {
+	
+}
+
+.dz-processing .dz-progress {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: -1;
+	direction: rtl;
+}
+
+.dz-processing .dz-progress .dz-upload {
+	display: block;
+	height: 100%;
+	background-color: #f7df59;
+}
+
+.dz-success {
+	background-color: #8df2a1;
+}
+
+.dz-error {
+	background-color: #f6aeae;
+}
+
+.dz-complete .dz-progress .dz-upload {
+	background-color: transparent;
+}
+
+
+.generated-fonts-list .font-item {
+/* 	border-top: 1px solid #c0c0c0; */
+	position: relative;
+	padding: 5px 20px;
+	background-color: white;
+	box-shadow: 2px 2px 10px #ddd;
+	margin: 20px 0;
+}
+
+.generated-fonts-list .font-item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.generated-fonts-list .font-item input {
+	margin: 10px;
+	width: 200px;
+	padding: 8px 4px;
+	text-align: left;
+	font-size: 14px;
+	border-radius: 2px;
+}
+
+.generated-fonts-list .font-item input.checkbox {
+	width: auto;
+	border-radius: 0;
+}
+
+.generated-fonts-list .font-item .font-names-section {
+	clear: both;
+}
+
+.generated-fonts-list .font-item .fonts-names.section.font-meta {
+}
+
+.generated-fonts-list .font-item .font-names-section .font-names-section-label-text {
+	float: left;
+    direction: ltr;
+    vertical-align: middle;
+    margin: 10px 0;
+    font-size: 12px;
+    width: 50px;
+    text-align: left;
+    line-height: 1.4;
+    color: #888;
+}
+
+.generated-fonts-list .font-item .font-names-section input {
+    direction: ltr;
+}
+
+.generated-fonts-list .font-item .font-names-section .text-field-wrapper {
+	position: relative;
+	float: left;
+}
+
+.generated-fonts-list .font-item .font-names-section.font-names input {
+	background-color: #eee;
+	position: relative;
+}
+
+.generated-fonts-list .font-item input.bound {
+	border: 1px solid orange;
+}
+
+a.bind-text-fields-button {
+	position: absolute;
+	top: 18px; right: 18px;
+	font-family: "dashicons";
+	color: #c0c0c0;
+	font-size: 18px;
+	opacity: 0.5;
+	text-decoration: none;
+}
+
+a.bind-text-fields-button:hover {
+	opacity: 1;
+}
+
+a.bind-text-fields-button:after {
+	content: "\f103";
+}
+
+.generated-fonts-list .font-item .toolbox {
+	display: block;
+	position: absolute;
+	top: 0; right: 10px;
+	opacity: 0;
+}
+
+.generated-fonts-list .font-item:hover .toolbox {
+	opacity: 1;
+}
+
+.generated-fonts-list .font-item .toolbox-button {
+	text-decoration: none;
+	color: #c0c0c0;
+	font-size: 38px;
+	line-height: 1;
+	text-align: center;
+	display: block;
+	width: 36px; height: 36px;
+	margin: 10px 0;
+	border-radius: 5px;
+	opacity: 0.5;
+	position: relative;
+}
+
+.generated-fonts-list .font-item .remove-font {
+}
+
+.generated-fonts-list .font-item .remove-font:hover {
+	color: white;
+	background-color: red;
+	opacity: 1;
+}
+
+.generated-fonts-list .font-item .sort-handle:hover {
+	color: white;
+	background-color: #aded8a;
+	opacity: 1;
+}
+
+.generated-fonts-list .font-item .remove-font:after {
+	content: "\00d7";
+	display: inline;
+}
+
+.generated-fonts-list .font-item .sort-handle:after {
+	content: "\f156";
+	font-family: "dashicons";
+	font-size: 32px;
+	line-height: 38px;
+	display: inline;
+}
+
+.generated-fonts-list .font-item .font-details {
+	width: 50%;
+	float: left;
+}
+
+.generated-fonts-list .font-item .files {
+	width: 50%;
+	float: right;
+	text-align: left;
+	font-size: 14px;
+	border-radius: 2px;
+	margin: 10px 0;
+}
+
+.generated-fonts-list .files .file-item {
+	display: inline-block;
+    margin: 0 6px 6px 0;
+    padding: 6px 8px;
+/*     background: #888; */
+/* 	border: 1px solid #888; */
+/*     color: white; */
+    border-radius: 3px;
+    cursor: pointer;
+    width: 240px;
+    position: relative;
+}
+
+.generated-fonts-list .files .file-item:before {
+	content: "\f498";
+	font-family: "dashicons";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.generated-fonts-list .ui-sortable-disabled .files .file-item {
+	background: #aaa;
+	cursor: default;
+}
+
+.generated-fonts-list .files .file-item:hover {
+	background: #f4f740;
+}
+
+.generated-fonts-list .files .file-item a.remove-file {
+	color: white;
+	display: block;
+	position: absolute;
+	right: 0; top: 0;
+	margin: 5px;
+	text-decoration: none;
+	font-size: 18px;
+	width: 17px; height: 17px;
+	text-align: center;
+	border-radius: 3px;
+	opacity: 0.25;
+}
+
+.generated-fonts-list .files .file-item:hover a.remove-file {
+	background-color: red;
+	color: white;
+	opacity: 1;
+}
+
+.generated-fonts-list .files .file-item a.remove-file:before {
+	content: "\00d7";
+}
+
+.generated-fonts-list .font-item .font-notice p {
+    clear: both;
+	border-top: 1px dashed #c0c0c0;
+    margin: 0;
+    padding: 10px 0;
+    color: #aaa;
+}
+
+.generated-fonts-list .font-item .font-notice p:before {
+	content: "\f534";
+	display: inline-block;
+	vertical-align: middle;
+	font-family: "dashicons";
+	font-size: 18px;
+	color: #7cc0fb;
+	margin: 0 3px;
+}
+
+.generator-controls .generator-controls-section {
+	display: block;
+	float: left;
+}
+
+.generator-controls .generator-controls-section-prepare {
+	float: right;
+}
+
+.generator-controls .generator-controls-section .sep {
+	margin: 0 0.5em;
+}
+
+.generator-controls:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.generator-controls .spinner {
+	float: none;
+}
+
+.dz-hidden-input {
+	right: 0;
+}
+
+#font_file_list {
+	width: 100%;
+	line-height: 1.4;
+	position: relative;
+}
+
+#font_file_list.hold:after {
+	content: "Please Wait";
+	display: block;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: rgba(230, 230, 230, 0.8);
+	color: #c0c0c0;
+	text-align: center;
+	font-size: 18px;
+	line-height: 36px;
+}
+
+#font_file_list .package-item {
+}
+
+#font_file_list .package-item h4 {
+	margin: 0;
+	background-color: #c0c0c0;
+	color: white;
+	padding: 5px;
+}
+
+#font_file_list li,
+.font-product-item {
+	padding: 10px 5px;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.font-product-item .product-name {
+	float: right;
+	line-height: 30px;
+}
+
+.font-product-item .product-actions {
+	float: left;
+}
+
+#font_file_list li:after,
+.font-product-item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#font_file_list .filename {
+	display: block;
+	padding: 5px 0;
+	float: left;
+}
+
+#font_file_list .actions {
+	display: block;
+	float: right;
+}
+
+#font_file_list .actions .delete-font-file {
+	margin-left: 20px;
+}
+
+#font_file_list,
+.font-product-list {
+	min-height: 50px;
+	border-top: 1px solid #c0c0c0;
+}
+
+.license-select .license-checkbox {
+	display: none;
+}
+
+.license-label {
+	display: inline-block;
+	padding: 4px;
+	border-radius: 2px;
+	background-color: #cfdee1;
+	border: 1px solid #c0c0c0;
+}
+
+.license-label:hover {
+	background-color: #a8cfe5;
+}
+
+.license-select .license-checkbox:checked + .license-label {
+	background-color: #00bbff;
+}
+
+.font-meta-fields {
+	width: 100%;
+}
+
+.font-meta-field-item {
+	margin: 15px 0;
+}
+
+.font-meta-field-item label {
+	float: right;
+	width: 30%;
+	line-height: 28px;
+}
+
+.font-meta-field-item input {
+	float: right;
+	width: 70%;
+	margin: 0;
+}
+
+.font-meta-field-item:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#typolog-font-debug-box {
+	font-family: 'Monaco', monospace;
+}
+
+#typolog-font-debug-box table {
+	margin-bottom: 40px;
+}
+
+#typolog-font-debug-box table tr td {
+	vertical-align: top;
+	padding: 5px 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#typolog-font-debug-box table tr td:first-child {
+	width: 175px;
+}
+#typolog-font-debug-box table tr td:last-child {
+	word-break: break-all;
+}
+
+.font-preview * {
+	font-weight: normal!important;
+	font-style: normal!important;
+	margin: 0; padding: 0;
+}
+
+#poststuff .font-preview h1 {
+	font-size: 96px;
+	line-height: 1;
+	margin: 0; padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#poststuff .font-preview h2 {
+	font-size: 48px;
+	line-height: 1.1;
+	margin: 0; padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#poststuff .font-preview p {
+	font-size: 20px;
+	line-height: 1.4;
+	margin: 0; padding: 0;
+}
+
+#poststuff .font-preview.no-font-preview {
+	height: 100px;
+	margin: 10px;
+	padding: 10px;
+	border: 3px solid #e0e0e0;
+	color: #c0c0c0;
+	text-align: center;
+	cursor: default;
+}
+
+#poststuff .font-preview.no-font-preview p {
+	font-weight: 24px;
+	line-height: 100px;
+}
+
+.wrap.sizes .sizes-display {
+	width: 100%;
+	position: relative;
+	font-size: 48px;
+	line-height: 1.2;
+}
+
+.typolog-settings-form .section-info,
+.typolog-settings-form .form-table {
+	display: none;
+	margin: 1em 0 1em 1.5em;
+	width: auto;
+}
+
+.typolog-settings-form .section-info.show,
+.typolog-settings-form .form-table.show {
+	display: table;
+}
+
+.typolog-settings-form h2 {
+	cursor: pointer;
+	border-top: 1px solid #c0c0c0;
+	padding-top: 1em;
+}
+
+.typolog-settings-form p.submit {
+	border-top: 1px solid #c0c0c0;
+}
+
+.typolog-settings-form h2:before {
+	content: "\f139";
+	font-family: "dashicons";
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.typolog-settings-form h2.active:before {
+	content: "\f140";
+}
+
+/*
+.wrap.sizes .sizes-display .font-display {
+	display: block;
+	position: absolute;
+	top: 0; right: 0;
+	opacity: 0.05;
+	line-height: 256px;
+	height: 256px;
+	white-space: nowrap;
+	vertical-align: bottom;
+}
+
+.wrap.sizes .sizes-display .font-display span {
+	vertical-align: bottom;
+}
+
+.wrap.sizes .sizes-display .font-display:after {
+	content: '';
+	display: inline-block;
+	width: 1px;	height: 256px;
+	vertical-align: bottom;
+}
+*/
+
+.wrap.sizes .sizes-display .font-display {
+	vertical-align: sub;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.wrap.sizes .sizes-display .font-display:hover {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.wrap.sizes .sizes-display .font-display.active {
+	color: rgba(100, 100, 200, 1);
+}
+
+.wrap.sizes .sizes-display .font-display.active.family-mode {
+	color: rgba(100, 100, 200, 1);
+}
+
+.wrap.sizes .sizes-control {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	height: 36px;
+	z-index: 200;
+}
+
+.wrap.sizes .sizes-control .font-choice {
+	width: 300px;
+	height: 36px;
+	position: absolute;
+	z-index: 200;
+}
+
+.wrap.sizes .sizes-control .font-choice:hover {
+	height: 360px;
+}
+
+.wrap.sizes .sizes-control .size-adjustment-inputs {
+	text-align: left;
+}
+
+.wrap.sizes .sizes-control .size-adjustment-inputs .size-adjust {
+	height: 28px;
+}
+
+.family-font-order-item {
+	padding: 3px;
+	border-bottom: 1px solid #c0c0c0;
+	cursor: move;
+}
+
+.family-font-order-item:last-child {
+	border: none;
+}
+
+.admin-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.admin-table a {
+	text-decoration: none;
+}
+
+.admin-table td {
+	vertical-align: top;
+	padding: 0.6em 0 0.6em 1em;
+}
+
+.control-table .item-cell {
+	width: 25%;
+}
+
+.control-table .product-cell {
+	width: 25%;
+}
+
+.control-table .files-cell {
+	width: 25%;
+}
+
+.control-table .downloads-cell {
+	width: 25%;
+}
+
+.admin-table .head-row td {
+	font-weight: bold;
+}
+
+.admin-table .collection-title {
+	margin: 0;
+}
+
+.admin-table .family-row td {
+	margin-botom: 0.6em;
+	margin-top: 0.6em;
+	border-top: 1px solid black;
+}
+
+.admin-table .family-item .family-toggle:before {
+	content: "\f141";
+	font-family: "dashicons";
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+.admin-table .family-item .family-toggle.show:before {
+	content: "\f140";
+}
+
+.admin-table .font-row {
+	display: none;
+}
+
+.admin-table .font-row.show {
+	display: table-row;
+}
+
+.admin-table .font-row td {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.admin-table .family-name {
+	font-weight: bold;
+	padding-left: 1em;
+}
+
+.admin-table .font-name {
+	text-indent: 1em;
+	padding-left: 1em;
+}
+
+.admin-table .font-row .font-link {
+	padding-right: 1em;
+}
+
+.admin-table tr:hover td {
+	background-color: rgba( 255, 255, 0, 0.2 );
+}
+
+.admin-table tr.collection-row:hover td,
+.admin-table tr.head-row:hover td {
+	background-color: transparent;
+}
+
+.admin-table input {
+	background-color: transparent;
+}
+
+.admin-table ::placeholder {
+	color: #aaa;
+}
+
+.admin-table .files-list {
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.admin-table .files-list li {
+	display: inline;
+}
+
+.admin-table .files-list li a {
+	text-decoration: none;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+}
+
+.admin-table .product-cell a.product-link {
+	text-decoration: none;
+}
+
+.admin-table .product-cell a.product-link:before {
+	content: "\f147";
+	font-family: "dashicons";
+	color: #54c964;
+}
+
+.admin-table .product-cell a.buy-link:before {
+	content: "\f504";
+	font-family: "dashicons";
+	color: #92b0d0;
+}
+
+.admin-table .product-cell .no-product:before {
+	content: "\f335";
+	font-family: "dashicons";
+	color: #cb492b;
+}
+
+.admin-table a.edit-font:before,
+.admin-table a.edit-family:before {
+	content: "\f464";
+}
+
+.admin-table a.edit-fonts:before {
+	content: "\f214";
+}
+
+.admin-table a.update-family-products:before {
+	content: "\f531";
+}
+
+.admin-table a.update-downloads:before {
+	content: "\f531";
+}
+
+.admin-table a.action-link {
+	float: left;
+	text-decoration: none;
+	opacity: 0;
+	margin: 0 0.4em;
+}
+
+.admin-table a.action-link:before {
+	font-family: "dashicons";
+	font-size: 16px;
+}
+
+.admin-table td:hover a.action-link {
+	opacity: 1;
+}
+
+.admin-table .files-list li a.font-file-link {
+	border: none;
+}
+
+.admin-table a.font-file-link:before {
+	content: "\f498";
+	font-family: "dashicons";
+	font-size: 16px;
+}
+
+.admin-table a.font-file-link.no-file:before {
+	content: "\f153";
+}
+
+.family-order-list {
+	border-top: 1px solid #c0c0c0;
+}
+
+.family-order-list li {
+	cursor: move;
+	border: 1px solid #c0c0c0;
+	background-color: #eee;
+	padding: 0.4em;
+	margin: 0.4em;
+}
+
+.cleanup-list {
+	border: 1px solid #c0c0c0;
+	max-height: 300px;
+	padding: 1em;
+	overflow-y: auto;
+}
+
+.cleanup-list li {
+	display: inline-block;
+	padding: 3px;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+}
+
+ul.cleanup-nav a {
+	text-decoration: none;
+}
+
+ul.cleanup-nav li {
+	display: inline;
+}
+
+ul.cleanup-nav li.active a {
+	font-weight: bold;
+}
+
+ul.cleanup-nav li:after {
+	content: " · ";
+}
+
+ul.cleanup-nav li:last-child:after {
+	content: "";
+}

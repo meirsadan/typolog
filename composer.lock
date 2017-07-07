@@ -1,0 +1,100 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "259704c22c21ea3e0d2f12b5c919fc20",
+    "content-hash": "b1d8a4949f9e54fb2955f5b718fff047",
+    "packages": [
+        {
+            "name": "automattic/woocommerce",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/woothemes/wc-api-php.git",
+                "reference": "fb53cf2321b2a5ef001de0a06c88073a05a7a4c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/woothemes/wc-api-php/zipball/fb53cf2321b2a5ef001de0a06c88073a05a7a4c3",
+                "reference": "fb53cf2321b2a5ef001de0a06c88073a05a7a4c3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">= 5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\WooCommerce\\": [
+                        "src/WooCommerce"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claudio Sanches",
+                    "email": "claudio.sanches@automattic.com"
+                }
+            ],
+            "description": "A PHP wrapper for the WooCommerce REST API",
+            "keywords": [
+                "api",
+                "woocommerce"
+            ],
+            "time": "2016-05-10 21:07:17"
+        },
+        {
+            "name": "phenx/php-font-lib",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "FontLib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "time": "2015-05-06 20:02:39"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

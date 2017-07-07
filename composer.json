@@ -1,0 +1,6 @@
+{
+	"require": {
+		"phenx/php-font-lib": "^0.4.0",
+		"automattic/woocommerce": "^1.0"
+	}
+}

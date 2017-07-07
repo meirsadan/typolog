@@ -1,0 +1,1378 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: typolog\n"
+"POT-Creation-Date: 2017-07-06 02:12+0300\n"
+"PO-Revision-Date: 2017-07-06 02:14+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: typolog.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-typolog-admin.php:199 public/class-typolog-public.php:365
+msgid "Licenses"
+msgstr "רישיונות"
+
+#: admin/class-typolog-admin.php:201 admin/class-typolog-admin.php:203
+#: admin/partials/typolog-admin-generator.php:20
+msgid "Catalog Generator"
+msgstr "מחולל קטלוג"
+
+#: admin/class-typolog-admin.php:201
+msgid "Typolog"
+msgstr "טיפולוג"
+
+#: admin/class-typolog-admin.php:203
+msgid "Generator"
+msgstr "מחולל"
+
+#: admin/class-typolog-admin.php:205 admin/partials/typolog-admin-sizes.php:20
+msgid "Font Size Adjustments"
+msgstr "התאמת גדלי פונט"
+
+#: admin/class-typolog-admin.php:205
+msgid "Font Sizes"
+msgstr "גדלי פונט"
+
+#: admin/class-typolog-admin.php:207
+#: admin/partials/typolog-admin-family-order.php:40
+msgid "Order Families"
+msgstr "סדר משפחות"
+
+#: admin/class-typolog-admin.php:209
+#: admin/partials/typolog-admin-price-table.php:83
+msgid "Price Table"
+msgstr "טבלת מחירים"
+
+#: admin/class-typolog-admin.php:211
+#: admin/partials/typolog-admin-control-table.php:96
+msgid "Control Table"
+msgstr "טבלת בקרה"
+
+#: admin/class-typolog-admin.php:213
+#: admin/partials/typolog-admin-cleanup.php:27
+msgid "Cleanup"
+msgstr "ניקוי"
+
+#: admin/class-typolog-admin.php:215
+#: admin/partials/typolog-admin-settings.php:11
+msgid "Typolog Settings"
+msgstr "הגדרות טיפולוג"
+
+#: admin/class-typolog-admin.php:215
+msgid "Settings"
+msgstr "הגדרות"
+
+#: admin/class-typolog-admin.php:237 includes/typolog-product-factory.php:1005
+#, php-format
+msgid ""
+"Store isn't connected! <a href=\"%s\">Click here</a> to connect with "
+"Woocommerce."
+msgstr "החנות אינה מחוברת! <a href=“%s”>לחץ כאן</a> כדי להתחבר לווקומרס."
+
+#: admin/class-typolog-admin.php:255
+msgid "Fonts Product Category and License Attribute created successfully!"
+msgstr "קטגוריית מוצר מסוג פונטים ומאפיין מוצר מסוג רישיון נוצרו בהצלחה!"
+
+#: admin/class-typolog-admin.php:333
+msgid "Updated products successfully."
+msgstr "המוצרים עודכנו בהצלחה."
+
+#: admin/class-typolog-admin.php:343
+msgid "An error occured while updating products."
+msgstr "שגיאה בעדכון המוצרים."
+
+#: admin/class-typolog-admin.php:375
+msgid "Regenerated fonts successfully."
+msgstr "הפונטים עודכנו בהצלחה."
+
+#: admin/class-typolog-admin.php:379 admin/class-typolog-admin.php:401
+msgid "An error occured while regenerating fonts."
+msgstr "שגיאה במהלך עדכון הפונטים."
+
+#: admin/class-typolog-admin.php:397
+msgid "Regenerated family fonts successfully."
+msgstr "הפונטים במשפחה עודכנו בהצלחה."
+
+#: admin/class-typolog-admin.php:421
+msgid "Reset all products successfully."
+msgstr "כל המוצרים אופסו בהצלחה."
+
+#: admin/class-typolog-admin.php:438
+msgid "Updated packages successfully."
+msgstr "חבילות הפונטים עודכנו בהצלחה."
+
+#: admin/class-typolog-admin.php:445
+msgid "An error occured while updating packages."
+msgstr "שגיאה בעדכון חבילות הפונטים."
+
+#: admin/class-typolog-admin.php:490
+msgid "File uploaded successfully!"
+msgstr "הקבצים הועלו בהצלחה!"
+
+#: admin/class-typolog-admin.php:500
+msgid "An error occured while moving the uploaded file"
+msgstr "שגיאה בהעברת הקובץ שהועלה"
+
+#: admin/class-typolog-admin.php:518
+msgid "File deleted successfully."
+msgstr "הקובץ נמחק בהצלחה."
+
+#: admin/class-typolog-admin.php:526
+msgid "An error occured while deleting the file"
+msgstr "שגיאה במחיקת הקובץ"
+
+#: admin/class-typolog-admin.php:564
+msgid "Unknown error occured"
+msgstr "שגיאה לא ידועה"
+
+#: admin/class-typolog-admin.php:568
+msgid "Fonts updated successfully!"
+msgstr "הפונטים עודכנו בהצלחה!"
+
+#: admin/class-typolog-admin.php:568
+#, php-format
+msgid "Created %s new fonts. Updated %s existing fonts. %s errors."
+msgstr "נוצרו %s פונטים חדשים. עודכנו %s פונטים קיימים. %s שגיאות."
+
+#: admin/class-typolog-admin.php:616
+#, php-format
+msgid "Deleted %s fonts successfully. Failed to delete %s fonts."
+msgstr "נמחקו %s פונטים בהצלחה. מחיקת %s פונטים נכשלה."
+
+#: admin/class-typolog-admin.php:640
+#, php-format
+msgid "Deleted %s files successfully. Failed to delete %s files."
+msgstr "נמחקו %s קבצי פונט בהצלחה. מחיקת %s קבצי פונט נכשלה."
+
+#: admin/class-typolog-admin.php:663
+#, php-format
+msgid "Deleted %s products successfully. Failed to delete %s products."
+msgstr "נמחקו %s מוצרים בהצלחה. מחיקת %s מוצרים נכשלה."
+
+#: admin/class-typolog-admin.php:690
+#, php-format
+msgid "Deleted %s downloads successfully. Failed to delete %s downloads."
+msgstr "נמחקו %s קבצים להורדה בהצלחה. מחיקת %s קבצים להורדה נכשלה."
+
+#: admin/class-typolog-admin.php:717
+#, php-format
+msgid "Deleted %s original font files successfully. Failed to delete %s files."
+msgstr "נמחקו %s קבצי פונט מקוריים בהצלחה. מחיקת %s קבצי פונט מקוריים נכשלה."
+
+#: admin/class-typolog-admin.php:739
+msgid "Error saving font size adjustments."
+msgstr "שגיאה בשמירת גדלי הפונט."
+
+#: admin/class-typolog-admin.php:743
+msgid "Saved all font size adjustments!"
+msgstr "גדלי הפונט נשמרו בהצלחה!"
+
+#: admin/class-typolog-admin.php:826
+msgid "Font Preview"
+msgstr "תצוגה מקדימה של הפונט"
+
+#: admin/class-typolog-admin.php:828
+#: admin/partials/typolog-admin-cleanup.php:15
+msgid "Font Files"
+msgstr "קבצי פונט"
+
+#: admin/class-typolog-admin.php:830
+msgid "Font Meta Fields"
+msgstr "שדות מטא של הפונט"
+
+#: admin/class-typolog-admin.php:832
+msgid "Font Products"
+msgstr "מוצרים מקושרים לפונט"
+
+#: admin/class-typolog-admin.php:834
+msgid "Font Attachments"
+msgstr "קבצים מצורפים לפונט"
+
+#: admin/class-typolog-admin.php:836
+msgid "Font Debug"
+msgstr "טיפול בשגיאות בפונט"
+
+#: admin/class-typolog-admin.php:838
+msgid "Font File"
+msgstr "קובץ פונט"
+
+#: admin/class-typolog-admin.php:883
+msgid "No products are currently associated with this font."
+msgstr "אין מוצרים המקושרים כרגע לפונט."
+
+#: admin/class-typolog-admin.php:894
+msgid "Display Font Family Name"
+msgstr "שם המשפחה לתצוגה באתר"
+
+#: admin/class-typolog-admin.php:895
+msgid "Display Font Style Name"
+msgstr "שם הסגנון לתצוגה באתר"
+
+#: admin/class-typolog-admin.php:896
+msgid "Original Font Family Name"
+msgstr "שם המשפחה המקורי"
+
+#: admin/class-typolog-admin.php:897
+msgid "Original Font Style Name"
+msgstr "שם הסגנון המקורי"
+
+#: admin/class-typolog-admin.php:898
+msgid "Web Family Name"
+msgstr "שם מלא לוובפונט"
+
+#: admin/class-typolog-admin.php:899
+#: admin/partials/typolog-admin-family-edit.php:15
+#: includes/deprecated/typolog-fonts.php:46 includes/typolog-font.php:244
+msgid "Font Weight (100–900)"
+msgstr "משקל הפונט (100-900)"
+
+#: admin/class-typolog-admin.php:900
+#: admin/partials/typolog-admin-family-edit.php:16
+msgid "Font Style (normal/italic)"
+msgstr "סגנון הפונט (normal/italic)"
+
+#: admin/class-typolog-admin.php:901
+msgid "Font Price"
+msgstr "מחיר הפונט"
+
+#: admin/class-typolog-admin.php:907
+#, php-format
+msgid "Font Price for %s license"
+msgstr "מחיר הפונט עבור רישיון %s"
+
+#: admin/class-typolog-admin.php:958 admin/class-typolog-admin.php:973
+#: admin/partials/typolog-admin-generator.php:28
+msgid "Drop font files here"
+msgstr "גרור קבצי פונט לכאן"
+
+#: admin/class-typolog-admin.php:976
+msgid "Download file"
+msgstr "הורד קובץ"
+
+#: admin/class-typolog-admin.php:986 admin/class-typolog-admin.php:1001
+msgid "Associated file extensions"
+msgstr "סיומות קובץ מקושרות"
+
+#: admin/class-typolog-admin.php:988 admin/class-typolog-admin.php:1004
+msgid "Enter extensions associated with this license, separated by |"
+msgstr "הכנס כאן סיומות קובץ המקושרות לרישיון זה, מופרדות בקו אנכי |"
+
+#: admin/class-typolog-admin.php:1028 admin/class-typolog-admin.php:1043
+msgid "Base price"
+msgstr "מחיר בסיס"
+
+#: admin/class-typolog-admin.php:1030 admin/class-typolog-admin.php:1046
+msgid "Enter base price for license type"
+msgstr "הכנס כאן מחיר בסיס לסוג רישיון זה"
+
+#: admin/class-typolog-admin.php:1071 admin/class-typolog-admin.php:1086
+msgid "Order"
+msgstr "סדר"
+
+#: admin/class-typolog-admin.php:1073 admin/class-typolog-admin.php:1089
+msgid "Enter order # of license"
+msgstr "הכנס את מספר הרישיון בסדר הרישיונות"
+
+#: admin/class-typolog-admin.php:1132 admin/class-typolog-admin.php:1147
+#: admin/partials/typolog-admin-family-edit.php:13
+#: includes/deprecated/typolog-fonts.php:21 includes/typolog-font.php:184
+msgid "Family Name"
+msgstr "שם משפחה"
+
+#: admin/class-typolog-admin.php:1134 admin/class-typolog-admin.php:1150
+msgid "Enter family name in Latin letters for product archives"
+msgstr "הכנס את שם המשפחה באותיות לטיניות עבור ארכיון המוצרים"
+
+#: admin/class-typolog-admin.php:1173 admin/class-typolog-admin.php:1188
+msgid "Family Index Name"
+msgstr "שם משפחה בעמודי אינדקס"
+
+#: admin/class-typolog-admin.php:1175 admin/class-typolog-admin.php:1191
+msgid "Enter family name for display on index pages (i.e. homepage)"
+msgstr "הכנס שם משפחה לתצוגה בעמודי אינדקס (למשל עמוד הבית)"
+
+#: admin/class-typolog-admin.php:1215 admin/class-typolog-admin.php:1230
+msgid "Badge Label"
+msgstr "תווית"
+
+#: admin/class-typolog-admin.php:1217 admin/class-typolog-admin.php:1233
+msgid "Enter badge label for special offers/etc."
+msgstr "הכנס טקסט תווית עבור מבצעים מיוחדים וכו׳."
+
+#: admin/class-typolog-admin.php:1257 admin/class-typolog-admin.php:1272
+msgid "Buy Link"
+msgstr "קישור לרכישה"
+
+#: admin/class-typolog-admin.php:1259 admin/class-typolog-admin.php:1275
+msgid "Enter link for buying at an external website."
+msgstr "הכנס קישור לרכישה באתר חיצוני"
+
+#: admin/class-typolog-admin.php:1299 admin/class-typolog-admin.php:1314
+msgid "Website Link"
+msgstr "קישור לאתר"
+
+#: admin/class-typolog-admin.php:1301 admin/class-typolog-admin.php:1317
+msgid "Enter link for promotional website."
+msgstr "הכנס קישור לאתר פרומו"
+
+#: admin/class-typolog-admin.php:1343 admin/class-typolog-admin.php:1350
+#: admin/class-typolog-admin.php:1369 admin/class-typolog-admin.php:1380
+msgid "Family Price"
+msgstr "מחיר משפחה"
+
+#: admin/class-typolog-admin.php:1345 admin/class-typolog-admin.php:1372
+msgid "Enter family price for all license types (leave blank for default)."
+msgstr "הכנס מחיר משפחה עבור כל סוגי הרישיונות (השאר ריק עבור בררת המחדל)."
+
+#: admin/class-typolog-admin.php:1352 admin/class-typolog-admin.php:1383
+#, php-format
+msgid "Enter family price for %s license type (leave blank for default)."
+msgstr "הכנס מחיר משפחה עבור רישיון מסוג %s (השאר ריק עבור בררת המחדל)."
+
+#: admin/class-typolog-admin.php:1483 admin/class-typolog-admin.php:1566
+#: includes/typolog-admin-settings.php:187
+msgid "Attachments"
+msgstr "קבצים מצורפים"
+
+#: admin/class-typolog-admin.php:1526
+msgid "PDF"
+msgstr "‫PDF"
+
+#: admin/class-typolog-admin.php:1593 admin/class-typolog-admin.php:1610
+msgid "Commercial"
+msgstr "מסחרי"
+
+#: admin/class-typolog-admin.php:1594 admin/class-typolog-admin.php:1611
+msgid ""
+"Determines whether Typolog will create products for font family in the store."
+msgstr "קובע אם טיפולוג ייצור מוצרים בחנות עבור משפחה זו."
+
+#: admin/class-typolog-admin.php:1644
+msgid "Font Order"
+msgstr "סידור פונטים"
+
+#: admin/class-typolog-admin.php:1655
+msgid "Set a custom display order for fonts in the family."
+msgstr "קבע סידור מותאם עבור פונטים במשפחה זו."
+
+#: admin/class-typolog-admin.php:1656
+msgid "Reset Font Order"
+msgstr "איפוס סדר הפונטים"
+
+#: admin/partials/typolog-admin-attachments.php:14
+#: admin/partials/typolog-admin-general-attachments.php:14
+msgid "Add Attachment"
+msgstr "הוסף קובץ מצורף"
+
+#: admin/partials/typolog-admin-cleanup-downloads.php:22
+msgid "Unused Font Downloads"
+msgstr "קבצים להורדה שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-downloads.php:71
+#, php-format
+msgid "Found %s unused downloads."
+msgstr "נמצאו %s קבצים להורדה שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-downloads.php:71
+msgid "Delete Selected Downloads"
+msgstr "מחק קבצים להורדה שנבחרו"
+
+#: admin/partials/typolog-admin-cleanup-downloads.php:73
+msgid "No unused downloads found."
+msgstr "לא נמצאו קבצים להורדה שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-font-files.php:22
+msgid "Unused Font Files"
+msgstr "קבצי פונט שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-font-files.php:61
+#, php-format
+msgid "Found %s unused font files."
+msgstr "נמצאו %s קבצי פונט שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-font-files.php:61
+msgid "Delete Selected Font Files"
+msgstr "מחק קבצי פונט שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-font-files.php:63
+msgid "No unused font files found."
+msgstr "לא נמצאו קבצי פונט שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-fonts.php:22
+msgid "Unused Fonts"
+msgstr "פונטים שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-fonts.php:44
+#, php-format
+msgid "Found %s unused fonts."
+msgstr "נמצאו %s פונטים שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-fonts.php:44
+msgid "Delete Selected Fonts"
+msgstr "מחק את הפונטים שנבחרו"
+
+#: admin/partials/typolog-admin-cleanup-fonts.php:46
+msgid "No unused fonts found."
+msgstr "לא נמצאו פונטים שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-original-files.php:22
+msgid "Unused Original Font Files"
+msgstr "קבצי פונט מקוריים שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-original-files.php:61
+#, php-format
+msgid "Found %s unused original font files."
+msgstr "נמצאו %s קבצי פונט מקוריים שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-original-files.php:61
+msgid "Delete Selected Original Files"
+msgstr "מחק קבצי פונט מקוריים שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-original-files.php:63
+msgid "No unused original files found."
+msgstr "לא נמצאו קבצי פונט מקוריים שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup-products.php:22
+msgid "Unused Products"
+msgstr "מוצרים שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-products.php:60
+#, php-format
+msgid "Found %s unused products."
+msgstr "נמצאו %s מוצרים שאינם בשימוש"
+
+#: admin/partials/typolog-admin-cleanup-products.php:60
+msgid "Delete Selected Products"
+msgstr "מחק מוצרים שנבחרו"
+
+#: admin/partials/typolog-admin-cleanup-products.php:62
+msgid "No unused products found."
+msgstr "לא נמצאו מוצרים שאינם בשימוש."
+
+#: admin/partials/typolog-admin-cleanup.php:15
+msgid "Products"
+msgstr "מוצרים"
+
+#: admin/partials/typolog-admin-cleanup.php:15
+#: includes/typolog-product-factory.php:189 public/class-typolog-public.php:255
+#: public/class-typolog-public.php:256
+msgid "Fonts"
+msgstr "פונטים"
+
+#: admin/partials/typolog-admin-cleanup.php:15
+#: admin/partials/typolog-admin-control-table.php:116
+msgid "Downloads"
+msgstr "קבצים להורדה"
+
+#: admin/partials/typolog-admin-cleanup.php:15
+msgid "Original Font Files"
+msgstr "קבצי פונט מקוריים"
+
+#: admin/partials/typolog-admin-control-table.php:100
+#, php-format
+msgid "Successfully edited %s fonts."
+msgstr "‫%s פונטים נערכו בהצלחה."
+
+#: admin/partials/typolog-admin-control-table.php:113
+msgid "Item"
+msgstr "פריט"
+
+#: admin/partials/typolog-admin-control-table.php:114
+msgid "Product"
+msgstr "מוצר"
+
+#: admin/partials/typolog-admin-control-table.php:115
+#: public/class-typolog-public.php:311 public/class-typolog-public.php:315
+msgid "Files"
+msgstr "קבצים"
+
+#: admin/partials/typolog-admin-control-table.php:147
+msgid "Edit All Fonts in Family"
+msgstr "ערוך את כל הפונטים במשפחה"
+
+#: admin/partials/typolog-admin-control-table.php:148
+#: admin/partials/typolog-admin-control-table.php:175
+msgid "External Link"
+msgstr "קישור חיצוני"
+
+#: admin/partials/typolog-admin-control-table.php:148
+msgid "Update Products"
+msgstr "עדכן מוצרים"
+
+#: admin/partials/typolog-admin-family-edit.php:11
+msgid "Display Family Name"
+msgstr "שם המשפחה לתצוגה באתר"
+
+#: admin/partials/typolog-admin-family-edit.php:12
+msgid "Display Style Name"
+msgstr "שם הסגנון לתצוגה באתר"
+
+#: admin/partials/typolog-admin-family-edit.php:14
+#: includes/deprecated/typolog-fonts.php:26 includes/typolog-font.php:196
+msgid "Style Name"
+msgstr "שם הסגנון"
+
+#: admin/partials/typolog-admin-family-edit.php:34
+#: admin/partials/typolog-admin-family-order.php:50
+#: admin/partials/typolog-admin-sizes.php:29
+msgid "Save"
+msgstr "שמירה"
+
+#: admin/partials/typolog-admin-font-preview.php:17
+msgid "No web fonts available for preview."
+msgstr "לא נמצאו וובפונטס עבור התצוגה המקדימה."
+
+#: admin/partials/typolog-admin-font-product-list.php:13
+#: admin/partials/typolog-admin-settings.php:38
+#: includes/typolog-admin-settings.php:415
+msgid "Delete"
+msgstr "מחיקה"
+
+#: admin/partials/typolog-admin-font-product-list.php:21
+#, php-format
+msgid "No %s product for font."
+msgstr "אין %s מוצר עבור הפונט."
+
+#: admin/partials/typolog-admin-generator.php:23
+msgid ""
+"Drop or select files in the files drop zone, edit the catalog and click "
+"\"Upload Files\""
+msgstr ""
+"גרור או בחר קבצים באיזור גרירת הקבצים, ערוך את הקטלוג ולחץ על ״העלאת קבצים״"
+
+#: admin/partials/typolog-admin-generator.php:33
+msgid "Add Empty Font"
+msgstr "הוסף פונט ריק"
+
+#: admin/partials/typolog-admin-generator.php:36
+msgid "Create Font Products"
+msgstr "חולל מוצרים לחנות"
+
+#: admin/partials/typolog-admin-generator.php:38
+msgid "Add to collection:"
+msgstr "הוסף לקולקציה:"
+
+#: admin/partials/typolog-admin-generator.php:47
+msgid "Upload Files"
+msgstr "העלאת קבצים"
+
+#: admin/partials/typolog-admin-generator.php:58
+msgid "Display Names:"
+msgstr "שמות תצוגה:"
+
+#: admin/partials/typolog-admin-generator.php:69
+msgid "Font Names:"
+msgstr "שמות הפונט:"
+
+#: admin/partials/typolog-admin-generator.php:95
+msgid "Uploading files..."
+msgstr "מעלה קבצים…"
+
+#: admin/partials/typolog-admin-generator.php:96
+msgid "Generating"
+msgstr "מחולל את"
+
+#: admin/partials/typolog-admin-generator.php:97
+msgid "Done!"
+msgstr "הפעולה הסתיימה!"
+
+#: admin/partials/typolog-admin-generator.php:98
+msgid "Error:"
+msgstr "שגיאה:"
+
+#: admin/partials/typolog-admin-generator.php:99
+msgid "Unknown error"
+msgstr "שגיאה לא ידועה"
+
+#: admin/partials/typolog-admin-generator.php:100
+msgid "No data"
+msgstr "אין נתונים"
+
+#: admin/partials/typolog-admin-generator.php:102
+msgid ""
+"Removing this font will remove all associated files. Do you wish to proceed?"
+msgstr "הסרת הפונט תסיר את כל הקבצים המקושרים אליו. האם להמשיך?"
+
+#: admin/partials/typolog-admin-generator.php:103
+msgid "Enter family name:"
+msgstr "הכנס שם משפחה:"
+
+#: admin/partials/typolog-admin-generator.php:105
+msgid "This font family already exists. This font will be added to the family."
+msgstr "משפחה זו כבר קיימת. פונט זו יתווסף למשפחה."
+
+#: admin/partials/typolog-admin-generator.php:106
+msgid ""
+"This font already exists. Its files will be overwritten by the files in this "
+"batch."
+msgstr "פונט זה קיים כבר. הקבצים שלו יוחלפו ע״י הקבצים שיועלו כעת."
+
+#: admin/partials/typolog-admin-pdf.php:7
+#: admin/partials/typolog-admin-pdf.php:14
+msgid "Remove PDF"
+msgstr "הסר PDF"
+
+#: admin/partials/typolog-admin-pdf.php:21
+msgid "Add PDF"
+msgstr "הוסף PDF"
+
+#: admin/partials/typolog-admin-price-table.php:92
+msgid "Update"
+msgstr "עדכון"
+
+#: admin/partials/typolog-admin-price-table.php:93
+#: includes/typolog-admin-settings.php:314
+msgid "Regenerate All Products"
+msgstr "חולל מחדש את כל המוצרים"
+
+#: admin/partials/typolog-admin-price-table.php:101
+msgid "Default License"
+msgstr "רישיון בררת מחדל"
+
+#: admin/partials/typolog-admin-price-table.php:103
+#, php-format
+msgid "%s License"
+msgstr "רישיון %s"
+
+#: admin/partials/typolog-admin-price-table.php:110
+msgid "Default Font"
+msgstr "בררת מחדל לפונט"
+
+#: admin/partials/typolog-admin-settings.php:17
+msgid "Successfully updated WooCommerce credentials!"
+msgstr "פרטי ווקומרס עודכנו בהצלחה!"
+
+#: admin/partials/typolog-admin-settings.php:38
+#: includes/typolog-admin-settings.php:415
+msgid "Key"
+msgstr "מפתח"
+
+#: admin/partials/typolog-admin-settings.php:38
+#: includes/typolog-admin-settings.php:415
+msgid "Value"
+msgstr "ערך"
+
+#: includes/deprecated/typolog-fonts.php:31 includes/typolog-font.php:208
+msgid "Family Name for Display"
+msgstr "שם המשפחה לתצוגה"
+
+#: includes/deprecated/typolog-fonts.php:36 includes/typolog-font.php:220
+msgid "Style Name for Display"
+msgstr "שם הסגנון לתצוגה"
+
+#: includes/deprecated/typolog-fonts.php:41 includes/typolog-font.php:232
+msgid "Family Name for Webfont Use"
+msgstr "שם הפונט המלא לשימוש כוובפונט"
+
+#: includes/deprecated/typolog-fonts.php:51 includes/typolog-font.php:256
+msgid "Font Style (normal/italic/oblique)"
+msgstr "סגנון הפונט (normal/italic/oblique)"
+
+#: includes/typolog-admin-settings.php:25
+msgid "WooCommerce API Settings"
+msgstr "הגדרות חיבור לווקומרס"
+
+#: includes/typolog-admin-settings.php:37
+msgid "WooCommerce Consumer Key"
+msgstr "מפתח צרכן של ווקומרס (Consumer Key)"
+
+#: includes/typolog-admin-settings.php:51
+msgid "WooCommerce Consumer Secret"
+msgstr "סוד צרכן של ווקומרס (Consumer Secret)"
+
+#: includes/typolog-admin-settings.php:65
+msgid "Fonts Product Category"
+msgstr "קטגוריית מוצר עבור פונטים"
+
+#: includes/typolog-admin-settings.php:79
+msgid "License Product Attribute"
+msgstr "מאפיין מוצר עבור רישיונות"
+
+#: includes/typolog-admin-settings.php:93
+msgid "Base Price"
+msgstr "מחיר בסיס"
+
+#: includes/typolog-admin-settings.php:107
+msgid "Limit Number of Downloads"
+msgstr "הגבלת מספר ההורדות"
+
+#: includes/typolog-admin-settings.php:121
+msgid "Expire Download (days)"
+msgstr "תפוגת תוקף עבור הורדות (ימים)"
+
+#: includes/typolog-admin-settings.php:135
+msgid "Directory Settings"
+msgstr "הגדרת ספריות"
+
+#: includes/typolog-admin-settings.php:147
+msgid "Font Files Directory"
+msgstr "ספריית קבצי פונט"
+
+#: includes/typolog-admin-settings.php:161
+msgid "Font Products Directory"
+msgstr "ספריית מוצרי פונט להורדה"
+
+#: includes/typolog-admin-settings.php:175
+msgid "General Attachments"
+msgstr "קבצים מצורפים כלליים"
+
+#: includes/typolog-admin-settings.php:201
+msgid "Generator Settings"
+msgstr "הגדרות מחולל"
+
+#: includes/typolog-admin-settings.php:213
+msgid "Generator Styles Dictionary"
+msgstr "מילון סגנונות"
+
+#: includes/typolog-admin-settings.php:227
+msgid "Danger Zone"
+msgstr "אזור מסוכן"
+
+#: includes/typolog-admin-settings.php:316
+msgid "Reset Font Products"
+msgstr "אפס מוצרי פונטים"
+
+#: includes/typolog-admin-settings.php:317
+msgid "Delete All Fonts"
+msgstr "מחק את כל הפונטים"
+
+#: includes/typolog-admin-settings.php:334
+msgid "Set directories here:"
+msgstr "הגדר ספריות כאן:"
+
+#: includes/typolog-admin-settings.php:340
+msgid "Manage attachments appended to all font product bundles:"
+msgstr "נהל את הקבצים המצורפים לכל חבילות הפונטים:"
+
+#: includes/typolog-admin-settings.php:346
+msgid "Manage settings related to the catalog generator:"
+msgstr "נהל הגדרות הקשורות למחולל הקטלוג:"
+
+#: includes/typolog-admin-settings.php:419
+msgid "Add"
+msgstr "הוספה"
+
+#: includes/typolog-font-factory.php:438
+msgid "Error deleting product from font."
+msgstr "שגיאה במחיקת המוצר מהפונט."
+
+#: includes/typolog-font-factory.php:444
+msgid "Error deleting font files."
+msgstr "שגיאה במחיקת קבצי הפונט."
+
+#: includes/typolog-font-factory.php:450
+msgid "Error deleting font."
+msgstr "שגיאה במחיקת הפונט."
+
+#: includes/typolog-font-factory.php:468
+msgid "Error deleting product from family."
+msgstr "שגיאה במחיקת המוצר מהמשפחה."
+
+#: includes/typolog-font-factory.php:474
+msgid "Error deleting family."
+msgstr "שגיאה במחיקת משפחה."
+
+#: includes/typolog-font-factory.php:484
+msgid "Error deleting all products."
+msgstr "שגיאה במחיקת כל המוצרים."
+
+#: includes/typolog-font-factory.php:494
+msgid "Error deleting all files."
+msgstr "שגיאה במחיקת כל הקבצים."
+
+#: includes/typolog-font.php:210
+msgid "Fontef"
+msgstr "פונטף"
+
+#: includes/typolog-font.php:222
+msgid "Regular"
+msgstr "רגיל"
+
+#: includes/typolog-package-factory.php:150
+msgid "Can't open ZIP "
+msgstr "לא ניתן לפתוח את קובץ הזיפ"
+
+#: includes/typolog-package-factory.php:170
+#: includes/typolog-package-factory.php:188
+msgid "Can't add to ZIP"
+msgstr "לא ניתן להוסיף לקובץ הזיפ"
+
+#: includes/typolog-product-factory.php:168
+#: includes/typolog-product-factory.php:215
+#: includes/typolog-product-factory.php:260
+#: includes/typolog-product-factory.php:315
+#: includes/typolog-product-factory.php:356
+#: includes/typolog-product-factory.php:397
+#: includes/typolog-product-factory.php:434
+msgid ""
+"WooCommerce is not connected. Please use the WooCommerce Panel to connect it."
+msgstr "ווקומרס אינו מחובר. אנא השתמשו במסך ההגדרות כדי להתחבר"
+
+#: includes/typolog-product-factory.php:285
+msgid "License"
+msgstr "רישיון"
+
+#: public/class-typolog-public.php:170
+msgctxt "Taxonomy General Name"
+msgid "Font Families"
+msgstr "משפחות"
+
+#: public/class-typolog-public.php:171
+msgctxt "Taxonomy Singular Name"
+msgid "Font Family"
+msgstr "משפחה"
+
+#: public/class-typolog-public.php:172
+msgid "Font Families"
+msgstr "משפחות"
+
+#: public/class-typolog-public.php:173
+msgid "All Families"
+msgstr "כל המשפחות"
+
+#: public/class-typolog-public.php:174
+msgid "Parent Family"
+msgstr "משפחת אב"
+
+#: public/class-typolog-public.php:175
+msgid "Parent Family:"
+msgstr "משפחת אב:"
+
+#: public/class-typolog-public.php:176
+msgid "New Family"
+msgstr "משפחה חדשה"
+
+#: public/class-typolog-public.php:177
+msgid "Add New Family"
+msgstr "הוסף משפחה חדשה"
+
+#: public/class-typolog-public.php:178
+msgid "Edit Family"
+msgstr "ערוך משפחה"
+
+#: public/class-typolog-public.php:179
+msgid "Update Family"
+msgstr "עדכן משפחה"
+
+#: public/class-typolog-public.php:180
+msgid "View Family"
+msgstr "הצג משפחה"
+
+#: public/class-typolog-public.php:181
+msgid "Separate families with commas"
+msgstr "הפרד משפחות בפסיקים"
+
+#: public/class-typolog-public.php:182
+msgid "Add or remove families"
+msgstr "הוסף או הסר משפחות"
+
+#: public/class-typolog-public.php:183 public/class-typolog-public.php:225
+#: public/class-typolog-public.php:376
+msgid "Choose from the most used"
+msgstr "בחר סיומות קובץ פופולאריות"
+
+#: public/class-typolog-public.php:184
+msgid "Popular Families"
+msgstr "משפחות פופולאריות"
+
+#: public/class-typolog-public.php:185
+msgid "Search Families"
+msgstr "חפש משפחות"
+
+#: public/class-typolog-public.php:186 public/class-typolog-public.php:228
+#: public/class-typolog-public.php:379
+msgid "Not Found"
+msgstr "לא נמצא"
+
+#: public/class-typolog-public.php:187
+msgid "No families"
+msgstr "אין משפחות"
+
+#: public/class-typolog-public.php:188
+msgid "Families list"
+msgstr "רשימת משפחות"
+
+#: public/class-typolog-public.php:189
+msgid "Families list navigation"
+msgstr "ניווט ברשימת המשפחות"
+
+#: public/class-typolog-public.php:212
+msgctxt "Taxonomy General Name"
+msgid "Collections"
+msgstr "קולקציות"
+
+#: public/class-typolog-public.php:213
+msgctxt "Taxonomy Singular Name"
+msgid "Collection"
+msgstr "קולקציה"
+
+#: public/class-typolog-public.php:214
+msgid "Collections"
+msgstr "קולקציות"
+
+#: public/class-typolog-public.php:215
+msgid "All Collections"
+msgstr "כל הקולקציות"
+
+#: public/class-typolog-public.php:216
+msgid "Parent Collection"
+msgstr "קולקציית אב"
+
+#: public/class-typolog-public.php:217
+msgid "Parent Collection:"
+msgstr "קולקציית אב:"
+
+#: public/class-typolog-public.php:218
+msgid "New Collection Name"
+msgstr "שם קולקצייה חדשה"
+
+#: public/class-typolog-public.php:219
+msgid "Add New Collection"
+msgstr "הוסף קולקציה חדשה"
+
+#: public/class-typolog-public.php:220
+msgid "Edit Collection"
+msgstr "ערוך קולקציה"
+
+#: public/class-typolog-public.php:221
+msgid "Update Collection"
+msgstr "עדכן קולקציה"
+
+#: public/class-typolog-public.php:222
+msgid "View Collection"
+msgstr "הצג קולקציה"
+
+#: public/class-typolog-public.php:223
+msgid "Separate collections with commas"
+msgstr "הפרד קולקציות בפסיקים"
+
+#: public/class-typolog-public.php:224
+msgid "Add or remove collections"
+msgstr "הוסף או הסר קולקציות"
+
+#: public/class-typolog-public.php:226
+msgid "Popular Collections"
+msgstr "קולקציות פופולאריות"
+
+#: public/class-typolog-public.php:227
+msgid "Search Collections"
+msgstr "חפש קולקציות"
+
+#: public/class-typolog-public.php:229
+msgid "No collections"
+msgstr "אין קולקציות"
+
+#: public/class-typolog-public.php:230
+msgid "Collections list"
+msgstr "רשימת קולקציות"
+
+#: public/class-typolog-public.php:231
+msgid "Collections list navigation"
+msgstr "ניווט ברשימת קולקציות"
+
+#: public/class-typolog-public.php:253
+msgctxt "Post Type General Name"
+msgid "Fonts"
+msgstr "פונטים"
+
+#: public/class-typolog-public.php:254
+msgctxt "Post Type Singular Name"
+msgid "Font"
+msgstr "פונט"
+
+#: public/class-typolog-public.php:257
+msgid "Font Archives"
+msgstr "ארכיוני פונט"
+
+#: public/class-typolog-public.php:258
+msgid "Parent Font:"
+msgstr "פונט אב:"
+
+#: public/class-typolog-public.php:259
+msgid "All Fonts"
+msgstr "כל הפונטים"
+
+#: public/class-typolog-public.php:260
+msgid "Add New Font"
+msgstr "הוסף פונט חדש"
+
+#: public/class-typolog-public.php:261 public/class-typolog-public.php:317
+msgid "Add New"
+msgstr "הוסף חדש"
+
+#: public/class-typolog-public.php:262
+msgid "New Font"
+msgstr "פונט חדש"
+
+#: public/class-typolog-public.php:263
+msgid "Edit Font"
+msgstr "ערוך פונט"
+
+#: public/class-typolog-public.php:264
+msgid "Update Font"
+msgstr "עדכן פונט"
+
+#: public/class-typolog-public.php:265
+msgid "View Font"
+msgstr "הצג פונט"
+
+#: public/class-typolog-public.php:266
+msgid "Search Font"
+msgstr "חפש פונט"
+
+#: public/class-typolog-public.php:267 public/class-typolog-public.php:323
+msgid "Not found"
+msgstr "לא נמצא"
+
+#: public/class-typolog-public.php:268 public/class-typolog-public.php:324
+msgid "Not found in Trash"
+msgstr "לא נמצא בפח"
+
+#: public/class-typolog-public.php:269 public/class-typolog-public.php:325
+msgid "Featured Image"
+msgstr "תמונה מייצגת"
+
+#: public/class-typolog-public.php:270 public/class-typolog-public.php:326
+msgid "Set featured image"
+msgstr "הגדר תמונה מייצגת"
+
+#: public/class-typolog-public.php:271 public/class-typolog-public.php:327
+msgid "Remove featured image"
+msgstr "הסר תמונה מייצגת"
+
+#: public/class-typolog-public.php:272 public/class-typolog-public.php:328
+msgid "Use as featured image"
+msgstr "השתמש כתמונה מייצגת"
+
+#: public/class-typolog-public.php:273
+msgid "Insert into font"
+msgstr "הכנס לפונט"
+
+#: public/class-typolog-public.php:274
+msgid "Uploaded to this font"
+msgstr "הועלו לפונט זה"
+
+#: public/class-typolog-public.php:275
+msgid "Fonts list"
+msgstr "רשימת הפונטים"
+
+#: public/class-typolog-public.php:276
+msgid "Fonts list navigation"
+msgstr "ניווט ברשימת הפונטים"
+
+#: public/class-typolog-public.php:277
+msgid "Filter fonts list"
+msgstr "סנן רשימת פונטים"
+
+#: public/class-typolog-public.php:280
+msgid "Font"
+msgstr "פונט"
+
+#: public/class-typolog-public.php:281
+msgid "Represents a single font style in the type catalog"
+msgstr "מייצג סגנון פונט בודד בקטלוג האותיות"
+
+#: public/class-typolog-public.php:309
+msgctxt "Post Type General Name"
+msgid "Files"
+msgstr "קבצים"
+
+#: public/class-typolog-public.php:310
+msgctxt "Post Type Singular Name"
+msgid "File"
+msgstr "קובץ"
+
+#: public/class-typolog-public.php:312 public/class-typolog-public.php:336
+msgid "File"
+msgstr "קובץ"
+
+#: public/class-typolog-public.php:313
+msgid "File Archives"
+msgstr "ארכיוני קבצים"
+
+#: public/class-typolog-public.php:314
+msgid "Parent File:"
+msgstr "קובץ אב:"
+
+#: public/class-typolog-public.php:316
+msgid "Add New File"
+msgstr "הוסף קובץ חדש"
+
+#: public/class-typolog-public.php:318
+msgid "New File"
+msgstr "קובץ חדש"
+
+#: public/class-typolog-public.php:319
+msgid "Edit File"
+msgstr "ערוך קובץ"
+
+#: public/class-typolog-public.php:320
+msgid "Update File"
+msgstr "עדכן קובץ"
+
+#: public/class-typolog-public.php:321
+msgid "View File"
+msgstr "הצג קובץ"
+
+#: public/class-typolog-public.php:322
+msgid "Search File"
+msgstr "חפש קובץ"
+
+#: public/class-typolog-public.php:329
+msgid "Insert into file"
+msgstr "הכנס לתוך קובץ"
+
+#: public/class-typolog-public.php:330
+msgid "Uploaded to this file"
+msgstr "הועלה לקובץ זה"
+
+#: public/class-typolog-public.php:331
+msgid "Files list"
+msgstr "רשימת קבצים"
+
+#: public/class-typolog-public.php:332
+msgid "Files list navigation"
+msgstr "ניווט ברשימת קבצים"
+
+#: public/class-typolog-public.php:333
+msgid "Filter files list"
+msgstr "סינון רשימת קבצים"
+
+#: public/class-typolog-public.php:337
+msgid "Files for Typolog"
+msgstr "קבצים עבור טיפולוג"
+
+#: public/class-typolog-public.php:363
+msgctxt "Taxonomy General Name"
+msgid "Licenses"
+msgstr "רישיונות"
+
+#: public/class-typolog-public.php:364
+msgctxt "Taxonomy Singular Name"
+msgid "License"
+msgstr "רישיון"
+
+#: public/class-typolog-public.php:366
+msgid "All Licenses"
+msgstr "כל הרישיונות"
+
+#: public/class-typolog-public.php:367
+msgid "Parent License"
+msgstr "רישיון אב"
+
+#: public/class-typolog-public.php:368
+msgid "Parent License:"
+msgstr "רישיון אב:"
+
+#: public/class-typolog-public.php:369
+msgid "New License Name"
+msgstr "שם רישיון חדש"
+
+#: public/class-typolog-public.php:370
+msgid "Add New License"
+msgstr "הוסף רישיון חדש"
+
+#: public/class-typolog-public.php:371
+msgid "Edit License"
+msgstr "ערוך רישיון"
+
+#: public/class-typolog-public.php:372
+msgid "Update License"
+msgstr "עדכן רישיון"
+
+#: public/class-typolog-public.php:373
+msgid "View License"
+msgstr "הצג רישיון"
+
+#: public/class-typolog-public.php:374
+msgid "Separate licenses with commas"
+msgstr "הפרד רישיונות בפסיקים"
+
+#: public/class-typolog-public.php:375
+msgid "Add or remove licenses"
+msgstr "הוסף או הסר רישיונות"
+
+#: public/class-typolog-public.php:377
+msgid "Popular Licenses"
+msgstr "רישיונות פופולאריים"
+
+#: public/class-typolog-public.php:378
+msgid "Search Licenses"
+msgstr "חפש רישיונות"
+
+#: public/class-typolog-public.php:380
+msgid "No licenses"
+msgstr "אין רישיונות"
+
+#: public/class-typolog-public.php:381
+msgid "Licenses list"
+msgstr "רשימת רישיונות"
+
+#: public/class-typolog-public.php:382
+msgid "Licenses list navigation"
+msgstr "ניווט ברשימת רישיונות"
+
+#. Plugin Name of the plugin/theme
+msgid "typolog"
+msgstr "טיפולוג"
+
+#. Plugin URI of the plugin/theme
+msgid "http://typolog.org/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Creates a catalog of type families for a WordPress based website, with "
+"WooCommerce support."
+msgstr "יוצר קטלוג משפחות פונטים עבור אתרים מבוססי וורדפרס, עם תמיכה בווקומרס."
+
+#. Author of the plugin/theme
+msgid "Meir Sadan"
+msgstr "מאיר סדן"
+
+#. Author URI of the plugin/theme
+msgid "http://meirsadan.com/"
+msgstr ""
+
+#~ msgid "All Files"
+#~ msgstr "כל הקבצים"
+
+#~ msgid "Typolog Control"
+#~ msgstr "בקרת טיפולוג"
+
+#~ msgid "Typolog Cleanup"
+#~ msgstr "ניקוי טיפולוג"
+
+#~ msgctxt "Taxonomy General Name"
+#~ msgid "File Extensions"
+#~ msgstr "סיומות קובץ"
+
+#~ msgctxt "Taxonomy Singular Name"
+#~ msgid "File Extension"
+#~ msgstr "סיומת קובץ"
+
+#~ msgid "File Extensions"
+#~ msgstr "סיומות קובץ"
+
+#~ msgid "All File Extensions"
+#~ msgstr "כל סיומות הקבצים"
+
+#~ msgid "Parent File Extension"
+#~ msgstr "סיומת קובץ הורה"
+
+#~ msgid "Parent File Extension:"
+#~ msgstr "סיומת קובץ הורה:"
+
+#~ msgid "New File Extension"
+#~ msgstr "סיומת קובץ חדשה"
+
+#~ msgid "Add New File Extension"
+#~ msgstr "הוסף סיומת קובץ חדשה"
+
+#~ msgid "Edit File Extension"
+#~ msgstr "ערוך סיומת קובץ"
+
+#~ msgid "Update File Extension"
+#~ msgstr "עדכן סיומת קובץ"
+
+#~ msgid "View File Extension"
+#~ msgstr "הצג סיומת קובץ"
+
+#~ msgid "Separate File Extensions with commas"
+#~ msgstr "הפרד סיומות קובץ בעזרת פסיקים"
+
+#~ msgid "Add or remove File Extensions"
+#~ msgstr "הוסף או הסר סיומות קובץ"
+
+#~ msgid "Popular File Extensions"
+#~ msgstr "סיומות קובץ פופולריות"
+
+#~ msgid "Search File Extensions"
+#~ msgstr "חפש סיומות קובץ"
+
+#~ msgid "No File Extensions"
+#~ msgstr "אין סיומות קובץ"
+
+#~ msgid "File Extensions list"
+#~ msgstr "רשימת סיומות קובץ"
+
+#~ msgid "File Extensions list navigation"
+#~ msgstr "ניווט ברשימת סיומות קובץ"
+
+#~ msgctxt "Post Type General Name"
+#~ msgid "Package Types"
+#~ msgstr "סוגי חבילות"
+
+#~ msgctxt "Post Type Singular Name"
+#~ msgid "Package Type"
+#~ msgstr "סוג חבילה"
+
+#~ msgid "Package Types"
+#~ msgstr "סוגי חבילות"
+
+#~ msgid "Package Type Archives"
+#~ msgstr "ארכיוני סוגי חבילות"
+
+#~ msgid "Parent Package Type:"
+#~ msgstr "סוג חבילה אב:"
+
+#~ msgid "All Package Types"
+#~ msgstr "כל סוגי החבילות"
+
+#~ msgid "Add New Package Type"
+#~ msgstr "הוסף סוג חבילה חדש"
+
+#~ msgid "New Package Type"
+#~ msgstr "סוג חבילה חדש"
+
+#~ msgid "Edit Package Type"
+#~ msgstr "ערוך סוג חבילה"
+
+#~ msgid "View Package Type"
+#~ msgstr "הצג סוג חבילה"
+
+#~ msgid "Search Package Type"
+#~ msgstr "חפש סוג חבילה"
+
+#~ msgid "Insert into Package Type"
+#~ msgstr "הכנס לסוג חבילה"
+
+#~ msgid "Uploaded to this Package Type"
+#~ msgstr "העלאות לסוג חבילה זה"
+
+#~ msgid "Package Types list"
+#~ msgstr "רשימת סוגי חבילות"
+
+#~ msgid "Package Types list navigation"
+#~ msgstr "ניווט ברשימת סוגי חבילות"
+
+#~ msgid "Filter Package Types list"
+#~ msgstr "סנן רשימת סוגי חבילות"
+
+#~ msgid "Package Type"
+#~ msgstr "סוג חבילה"
+
+#~ msgid "Represents a package type with associated file extensions"
+#~ msgstr "מייצג סוג חבילה עם סיומות קובץ מקושרות"
+
+#~ msgid "Delete Unused Fonts"
+#~ msgstr "מחק פונטים שאינם בשימוש"
+
+#~ msgid "Update Downloads"
+#~ msgstr "עדכן קבצים להורדה"
+
+#~ msgid "Update Files"
+#~ msgstr "עדכן קבצים"

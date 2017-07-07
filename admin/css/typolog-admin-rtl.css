@@ -1,0 +1,57 @@
+.generator-controls .generator-controls-section {
+	float: right;
+}
+
+.generator-controls .generator-controls-section-prepare {
+	float: left;
+}
+
+.generated-fonts-list .font-item .font-details {
+	float: right;
+}
+
+.generated-fonts-list .font-item .font-names-section .font-names-section-label-text {
+	float: right;
+	direction: rtl;
+	text-align: right;
+}
+
+.generated-fonts-list .font-item .font-names-section .text-field-wrapper {
+	float: right;
+}
+
+.generated-fonts-list .font-item .font-names-section input.display-family-name,
+.generated-fonts-list .font-item .font-names-section input.display-style-name {
+	direction: rtl;
+	text-align: right;	
+}
+
+.generated-fonts-list .font-item .files {
+	text-align: right;
+}
+
+.generated-fonts-list .font-item .toolbox {
+	right: auto;
+	left: 10px;
+}
+
+.font-names-section.display-names a.bind-text-fields-button {
+	right: auto; left: 18px;
+}
+
+.generated-fonts-list .files .file-item {
+	direction: rtl;
+}
+
+.generated-fonts-list .files .file-item a.remove-file {
+	right: auto; left: 0;
+}
+
+.typolog-settings-form h2:before {
+	content: "\f141";
+}
+
+.typolog-settings-form .section-info,
+.typolog-settings-form .form-table {
+	margin: 1em 1.5em 1em 0;
+}
