@@ -205,6 +205,22 @@ function tl_get_family_webfont_names( $family_id ) {
 	return $names;
 }
 
+function tl_get_family_webfont_dictionary( $family_id ) {
+	
+	$names = array();
+	
+	$fonts = Typolog_Font_Query::get_by_family( $family_id );
+	
+	foreach ($fonts as $font) {
+		
+		$names[ tl_get_webfont_name( $font->ID ) ] = get_the_title( $font->ID );
+		
+	}
+	
+	return $names;
+}
+
+
 function tl_get_family_main_webfont_name( $family_id ) {
 	
 	$names = array();
@@ -252,6 +268,32 @@ function tl_get_all_main_webfont_names( $collection_id = null ) {
 	foreach ( $families as $family ) {
 		
 		array_push( $names, tl_get_family_main_webfont_name( $family->term_id ) );
+		
+	}
+	
+	return $names;
+	
+}
+
+function tl_get_all_main_webfont_dictionary( $collection_id = null ) {
+	
+	if ( $collection_id ) {
+		
+		$families = Typolog_Collection_Query::get_families( $collection_id );
+				
+	} else {
+		
+		$families = Typolog_Family_Query::get_all();
+	
+	}
+	
+	$names = array();
+	
+	foreach ( $families as $family ) {
+		
+		$main_font_id = Typolog_Family_Query::get_main_font( $family->term_id );
+		
+		$names[ tl_get_family_main_webfont_name( $family->term_id ) ] = get_the_title( $main_font_id );
 		
 	}
 	
