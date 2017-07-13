@@ -7,7 +7,7 @@ Typolog is a WordPress plugin that has three jobs:
 * Accomodate font files and sort them by their type (otf, ttf, web fonts)
 * Create font bundles and downloadable WooCommerce products from the catalog
 
-It also has some extra features which were built specifically for Fontef[https://fontef.com/], the website this plugin was built for:
+It also has some extra features which were built specifically for (Fontef)[https://fontef.com/], the website this plugin was built for:
 * An automagical catalog generator that tries to parse font files (using opentype.js) using their information
 * Adjust font sizes to fit them together nicely on display
 * Create "display names" for type families (for non-Latin foundries)
