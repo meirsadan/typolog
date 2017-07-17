@@ -124,6 +124,11 @@ class Typolog_Package_Factory {
 		
 	}
 	
+	function generate_zip_pathname( $base_name, $secret ) {
+		
+		return $base_name . '_' . $secret . '/';
+		
+	}
 	
 	function generate_zip_filename( $base_name, $secret ) {
 		
@@ -141,9 +146,13 @@ class Typolog_Package_Factory {
 		
 		$secret = generate_file_secret(); // Generate secret to be added to file
 		
-		$full_package_filename = $this->products_path . $this->generate_zip_filename( $zip_filename, $secret ); // path to final zip file
+		$full_package_pathname = $this->products_path . $this->generate_zip_pathname( $zip_filename, $secret );
 		
-		$full_package_url = $this->products_url . $this->generate_zip_filename( $zip_filename, $secret ); // url to final zip file
+		mkdir( $full_package_pathname );
+		
+		$full_package_filename = $full_package_pathname . $zip_filename . ".zip"; // path to final zip file
+		
+		$full_package_url = $this->products_url . $this->generate_zip_pathname( $zip_filename, $secret ) . $zip_filename . ".zip"; // url to final zip file
 
 		if ( true !== $res = $zip->open( $full_package_filename, ZipArchive::CREATE | ZipArchive::OVERWRITE ) ) { // Try to create a new zip file
 			
@@ -175,11 +184,11 @@ class Typolog_Package_Factory {
 		
 		// Add attachments, if any
 		
-		$attachments = array_merge_two($attachments, TypologOptions()->get( 'general_attachments' ) ); // Add general attachments to requested attachments
+		$the_attachments = array_merge_two($attachments, TypologOptions()->get( 'general_attachments' ) ); // Add general attachments to requested attachments
 		
-		if ( count($attachments) ) {
+		if ( count($the_attachments) ) {
 			
-			foreach ($attachments as $attachment) {
+			foreach ($the_attachments as $attachment) {
 				
 				$attachment_filename = get_attached_file( $attachment );
 				
@@ -208,7 +217,7 @@ class Typolog_Package_Factory {
 	
 	/* Create packages according to license bundles for font */
 	
-	function zip_packages( $font_files, $package_family_name, $attachments = null ) {
+	function zip_packages( $font_files, $package_family_name, $attachments = [ ] ) {
 		
 		$packages_array = array();
 		
@@ -220,9 +229,9 @@ class Typolog_Package_Factory {
 			
 			$license_attachments = $license->get_attachments();
 			
-			$attachments = array_merge_two( $attachments, $license_attachments );
+			$font_attachments = array_merge_two( $attachments, $license_attachments );
 			
-			$res = $this->zip_package( $files, $package_family_name . "_" . $type, $attachments );
+			$res = $this->zip_package( $files, $package_family_name . "_" . $type, $font_attachments );
 			
 			if ( is_wp_error( $res ) ) {
 				
@@ -289,6 +298,11 @@ class Typolog_Package_Factory {
 		
 	}
 	
+	function is_dir_empty($dir) {
+	  if (!is_readable($dir)) return NULL; 
+	  return (count(scandir($dir)) == 2);
+	}
+	
 	/* Deletes current ZIP archives according to list */
 	
 	function delete_current_downloads( $downloads_list ) {
@@ -302,6 +316,17 @@ class Typolog_Package_Factory {
 					if ( file_exists( $download_item['path'] ) )  {
 						
 						unlink( $download_item['path'] );
+						
+						if ( dirname( $download_item['path'] ) . '/' !== $this->products_path ) {
+							
+							typolog_log( 'products_path_compare_' . $download_item['name'] . "_" . rand(1000,9999), [ dirname( $download_item['path'] ), $this->products_path ] );
+							
+							if ( $this->is_dir_empty( dirname( $download_item['path'] ) ) ) {
+								
+								rmdir( dirname( $download_item['path'] ) );
+							}
+							
+						}
 						
 					}
 					
