@@ -134,10 +134,6 @@ class Typolog_Admin {
 		wp_enqueue_media();
 		wp_enqueue_script( 'dropzonejs', plugin_dir_url( __FILE__ ) . 'js/vendor/dropzone.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'opentypejs', plugin_dir_url( __FILE__ ) . 'js/vendor/opentype.min.js', array( ), $this->version, false );
-/*
-		wp_enqueue_script( 'underscorejs', plugin_dir_url( __FILE__ ) . 'js/vendor/underscore-min.js', array( ), $this->version, false );
-		wp_enqueue_script( 'backbonejs', plugin_dir_url( __FILE__ ) . 'js/vendor/backbone-min.js', array( 'underscorejs' ), $this->version, false );
-*/
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/typolog-admin.min.js', array( 'jquery', 'dropzonejs', 'opentypejs', 'underscore', 'backbone' ), $this->version, false );
 
 		wp_localize_script( $this->plugin_name, "acceptedFileTypes", $this->options[ 'allowed_file_extensions' ] );
@@ -158,16 +154,26 @@ class Typolog_Admin {
 
 	}
 	
+	/**
+	 * Output generator page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_generator_page() {
 		
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-generator.php';
 		
 	}
 
+	/**
+	 * Output font sizes page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_sizes_page() {
 		
-// 		$webfont_names = tl_get_all_webfont_names();
-
 		if ( !$this->font_factory ) {
 			$this->font_factory = new Typolog_Font_Factory($this->options);		
 		}
@@ -178,36 +184,72 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Output price table page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_prices_page() {
 		
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-price-table.php';
 		
 	}
 
+	/**
+	 * Output control table page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_control_page() {
 		
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-control-table.php';
 		
 	}
 
+	/**
+	 * Output families order page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_family_order_page() {
 		
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-family-order.php';
 		
 	}
 
+	/**
+	 * Output cleanup page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_cleanup_page() {
 
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-cleanup.php';
 		
 	}
 	
+	/**
+	 * Output settings page.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function create_settings_page() {
 		
 		include plugin_dir_path( __FILE__ ) . 'partials/typolog-admin-settings.php';
 		
 	}
 	
+	/**
+	 * Registers admin pages and menus/submenus.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	public function add_admin_pages() {
 
 		add_submenu_page( 'edit.php?post_type=typolog_font', __('Licenses', 'typolog'), __('Licenses', 'typolog'), 'edit_posts', 'edit-tags.php?taxonomy=typolog_license&post_type=typolog_file', null );
@@ -227,17 +269,28 @@ class Typolog_Admin {
 		add_submenu_page( 'typolog', __('Cleanup', 'typolog'), __('Cleanup', 'typolog'), 'edit_posts', 'typolog-cleanup', array(&$this, 'create_cleanup_page') );
 
 		add_submenu_page( 'typolog', __('Typolog Settings', 'typolog'), __('Settings', 'typolog'), 'edit_posts', 'typolog-settings', array(&$this, 'create_settings_page') );
-
-// 		add_options_page( __('Typolog Settings', 'typolog'), __('Typolog', 'typolog'), 'edit_posts', 'typolog-settings', array(&$this, 'create_settings_page') );
 		
 	}
 	
+	/**
+	 * Initialize the settings page class.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function settings_page_init() {
 		
 		$this->admin_settings = new Typolog_Admin_Settings();
 		
 	}
 	
+	/**
+	 * Check WooCommerce connection and WooCommerce categories.
+	 * TODO: Integrate this better into the code.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function check_for_stuff() {
 		
 		if ( !$this->font_factory ) {
@@ -275,8 +328,13 @@ class Typolog_Admin {
 	}
 	
 	
-	/* Handles updating the associated font product on save */
-	
+	/**
+	 * Update the associated font product(s) on save.
+	 * 
+	 * @access public
+	 * @param mixed $font_id
+	 * @return void
+	 */
 	function update_font_products_handler( $font_id ) {
 
 		if ( Typolog_Font_Query::is_font( $font_id ) ) {
@@ -289,6 +347,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * AJAX hook: Refresh products for family/font by ID.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function update_products_handler() {
 
 		$id = ( isset( $_REQUEST['id'] ) ) ? $_REQUEST['id'] : null;
@@ -302,6 +366,14 @@ class Typolog_Admin {
 		} elseif ( ( "font" == $type ) && ( $id ) ) {
 			
 			$font_ids = [ $id ];
+			
+		} else {
+
+			echo_and_die( [
+				
+				"error" => __( "No IDs specified.", "typolog" )
+				
+			] );
 			
 		}
 
@@ -360,6 +432,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Provide batch interface for editing all of the family's fonts metadata at once.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function edit_family_fonts_handler() {
 		
 		$family_id = ( isset( $_REQUEST['family_id'] ) ) ? $_REQUEST['family_id'] : null;
@@ -376,9 +454,19 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: regenerate products for single font by ID.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function regenerate_fonts_handler() {
 		
 		$font_id = ( isset( $_REQUEST['font_id'] ) ) ? $_REQUEST['font_id'] : null;
+		
+		if ( !$font_id ) {
+			echo_and_die( [ "error" => __( "No font ID specified.", "typolog" ) ] );
+		}
 
 		if ( !$this->font_factory ) {
 			$this->font_factory = new Typolog_Font_Factory($this->options);		
@@ -394,6 +482,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: regenerate all fonts products in family.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function regenerate_family_handler() {
 		
 		$family_id = ( isset( $_REQUEST['family_id'] ) ) ? $_REQUEST['family_id'] : null;
@@ -416,6 +510,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * AJAX hook: Remove product information from all fonts and families.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function reset_products_handler() {
 		
 		$fonts = Typolog_Font_Query::get_all();
@@ -436,6 +536,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * AJAX hook: update font packages (zip files) for font.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function update_font_packages_handler() {
 		
 		required_vars( [ $_REQUEST['files'], $_REQUEST['font_id'] ], true );
@@ -459,6 +565,12 @@ class Typolog_Admin {
 		echo_and_die( [ "error" => __( "An error occured while updating packages.", "typolog" ) ] );
 	}
 	
+	/**
+	 * Handle font file upload (assigns file to font if provided ID).
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function upload_font_handler() {
 		
 		required_vars( [ $_FILES['file'] ] , true );
@@ -515,6 +627,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Handles deletion of font file by font ID and file ID.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_font_file_handler() {
 		
 		required_vars( [ $_REQUEST['font_id'], $_REQUEST['file_id'] ] , true );
@@ -541,6 +659,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * AJAX hook: handles catalog generation (this is the main functionality of the catalog generator).
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function upload_catalog_handler() {
 		
 		required_vars( [ $_REQUEST['fonts'] ] , true );
@@ -585,6 +709,12 @@ class Typolog_Admin {
 			
 	}
 	
+	/**
+	 * AJAX hook: delete all fonts and families.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_all_fonts_handler() {
 
 		if ( !$this->font_factory ) {
@@ -609,6 +739,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Delete fonts.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_fonts_handler() {
 
 		required_vars( array( $_REQUEST[ 'delete_fonts' ] ), true );
@@ -633,6 +769,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Delete font files.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_font_files_handler() {
 
 		required_vars( array( $_REQUEST[ 'delete_files' ] ), true );
@@ -657,6 +799,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Delete products.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_products_handler() {
 
 		required_vars( array( $_REQUEST[ 'delete_products' ] ), true );
@@ -680,6 +828,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Delete font packages (zips).
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_downloads_handler() {
 
 		required_vars( array( $_REQUEST[ 'delete_downloads' ] ), true );
@@ -707,6 +861,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * AJAX hook: Delete original font files (not data structures).
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function delete_originals_handler() {
 
 		required_vars( array( $_REQUEST[ 'delete_originals' ] ), true );
@@ -734,6 +894,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * AJAX handler: saves size adjustments.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function save_size_adjustments_handler() {
 		
 		required_vars( array( $_REQUEST['sizes'] ), true );
@@ -758,6 +924,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Delete actual font file before deleting the font file post.
+	 * 
+	 * @access public
+	 * @param mixed $font_file_id
+	 * @return void
+	 */
 	function delete_font_file_before_delete_post( $font_file_id ) {
 		
 		if ( "typolog_file" != get_post_type( $font_file_id ) ) return;
@@ -776,6 +949,13 @@ class Typolog_Admin {
 
 	}
 	
+	/**
+	 * Delete product information from font/family file before deleting font.
+	 * 
+	 * @access public
+	 * @param mixed $product_id
+	 * @return void
+	 */
 	function delete_product_relationships( $product_id ) {
 		
 		// do this before deleting a product
@@ -790,6 +970,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Print the debug metabox on font editor page.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_debug_metabox( $font ) {
 		
 		$font_meta = Typolog_Font_Query::get_meta( $font->ID );
@@ -835,6 +1022,12 @@ class Typolog_Admin {
 <?php
 	}
 	
+	/**
+	 * Register metaboxes for edit posts pages.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function register_metaboxes() {
 		
 		add_meta_box( 'typolog-font-preview-box', __( 'Font Preview', 'typolog' ), array($this, 'print_font_preview_metabox'), array( 'typolog_font', 'typolog_file' ) );
@@ -853,6 +1046,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save meta fields for font post.
+	 * 
+	 * @access public
+	 * @param mixed $font_id
+	 * @return void
+	 */
 	function update_font_data( $font_id ) {
 		
 		$res = $this->save_font_meta_fields( $font_id );
@@ -862,6 +1062,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Print metabox with pretty preview of font.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_preview_metabox( $font ) {
 		
 		if ( 'typolog_file' == $font->post_type ) {
@@ -884,6 +1091,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print metabox with font product information.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_products_metabox( $font ) {
 		
 		$font_products = Typolog_Font_Query::get_products( $font->ID );
@@ -900,6 +1114,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print metabox with font-specific meta fields.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_meta_fields_metabox( $font ) {
 		
 		wp_nonce_field( 'font_edit_meta_fields', 'font_meta_fields_nonce' );
@@ -929,6 +1150,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save font meta fields.
+	 * 
+	 * @access public
+	 * @param mixed $font_id
+	 * @return void
+	 */
 	function save_font_meta_fields( $font_id ) {
 		
 		if ( !isset( $_POST['font_meta_fields_nonce'] ) || !wp_verify_nonce( $_POST['font_meta_fields_nonce'], 'font_edit_meta_fields' ) ) {
@@ -953,6 +1181,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Outputs table with font files and assigned licenses per font file for font.
+	 * 
+	 * @access public
+	 * @param mixed $font_id
+	 * @return void
+	 */
 	function render_licenses_table( $font_id ) {
 		
 		if ( $font_id ) {
@@ -965,6 +1200,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print font files metabox for font editor page.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_files_metabox( $font ) {
 		
 		?>
@@ -977,6 +1219,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print update metabox for font file editor page.
+	 * 
+	 * @access public
+	 * @param mixed $font_file
+	 * @return void
+	 */
 	function print_font_file_update_metabox( $font_file ) {
 		
 		$font_file_obj = new Typolog_Font_File( $font_file->ID );
@@ -993,6 +1242,12 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Print extensions field for license taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_license_extensions_field() {
 		
 	?>
@@ -1005,6 +1260,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit extensions field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_license_edit_extensions_field($term) {
 	 
 		$license_extensions = get_term_meta( $term->term_id, '_extensions', true );
@@ -1022,6 +1284,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save extensions field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_license_extensions_field( $term_id ) {
 		
 		if ( isset( $_POST['license_extensions'] ) ) {
@@ -1035,6 +1304,12 @@ class Typolog_Admin {
 	}  
 
 
+	/**
+	 * Print base price field for license taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_license_base_price_field() {
 		
 	?>
@@ -1047,6 +1322,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit base price field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_license_edit_base_price_field($term) {
 	 
 		$base_price = get_term_meta( $term->term_id, '_base_price', true );
@@ -1064,6 +1346,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save base price field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_license_base_price_field( $term_id ) {
 		
 		if ( isset( $_POST['base_price'] ) ) {
@@ -1078,6 +1367,12 @@ class Typolog_Admin {
 
 
 
+	/**
+	 * Print order field for license taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_license_order_field() {
 		
 	?>
@@ -1090,6 +1385,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit order field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_license_edit_order_field($term) {
 	 
 		$license_order = get_term_meta( $term->term_id, '_order', true );
@@ -1107,6 +1409,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save order field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_license_order_field( $term_id ) {
 		
 		if ( isset( $_POST['license_order'] ) ) {
@@ -1119,6 +1428,13 @@ class Typolog_Admin {
 		
 	}  
 
+	/**
+	 * Save Woocommerce attribute term for license.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_license_attribute_term( $term_id ) {
 
 		if ( !$this->font_factory ) {
@@ -1129,6 +1445,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Delete Woocommerce attribute term for license.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function delete_license_attribute_term( $term_id ) {
 
 		if ( !$this->font_factory ) {
@@ -1139,6 +1462,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print family name field for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_family_name_field() {
 		
 	?>
@@ -1151,6 +1480,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit family name field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_family_name_field( $term ) {
 	 
 		$family_name = get_term_meta( $term->term_id, '_family_name', true );
@@ -1168,6 +1504,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save family name field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_family_name_field( $term_id ) {
 		
 		if ( isset( $_POST['family_name'] ) ) {
@@ -1180,6 +1523,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print family index name field for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_family_index_name_field() {
 		
 	?>
@@ -1192,6 +1541,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit family index name for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_family_index_name_field( $term ) {
 	 
 		$family_index_name = get_term_meta( $term->term_id, '_family_index_name', true );
@@ -1209,6 +1565,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save family index name for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_family_index_name_field( $term_id ) {
 		
 		if ( isset( $_POST['family_index_name'] ) ) {
@@ -1222,6 +1585,12 @@ class Typolog_Admin {
 	}
 
 
+	/**
+	 * Print badge label text for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_badge_label_field() {
 		
 	?>
@@ -1234,6 +1603,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit badge label text for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_badge_label_field( $term ) {
 	 
 		$badge_label = get_term_meta( $term->term_id, '_badge_label', true );
@@ -1251,6 +1627,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save badge label text for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_badge_label_field( $term_id ) {
 		
 		if ( isset( $_POST['badge_label'] ) ) {
@@ -1263,7 +1646,12 @@ class Typolog_Admin {
 		
 	}
 
-
+	/**
+	 * Print buy link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_buy_link_field() {
 		
 	?>
@@ -1276,6 +1664,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit buy link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_buy_link_field( $term ) {
 	 
 		$buy_link = get_term_meta( $term->term_id, '_buy_link', true );
@@ -1293,6 +1688,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save buy link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_buy_link_field( $term_id ) {
 		
 		if ( isset( $_POST['buy_link'] ) ) {
@@ -1306,6 +1708,12 @@ class Typolog_Admin {
 	}
 
 
+	/**
+	 * Print website link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_website_field() {
 		
 	?>
@@ -1318,6 +1726,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit website link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_website_field( $term ) {
 	 
 		$website_link = get_term_meta( $term->term_id, '_website_link', true );
@@ -1335,6 +1750,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save website link field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_website_field( $term_id ) {
 		
 		if ( isset( $_POST['website_link'] ) ) {
@@ -1348,6 +1770,12 @@ class Typolog_Admin {
 	}
 
 
+	/**
+	 * Print price fields (generic and by license) for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_price_fields() {
 		
 		$licenses = Typolog_License_Query::get_all_slugs();
@@ -1371,6 +1799,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit price fields (generic and by license) for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_price_fields( $term ) {
 	 
 		$licenses = Typolog_License_Query::get_all_slugs();
@@ -1402,6 +1837,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save price fields for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_price_fields( $term_id ) {
 		
 		if ( isset( $_POST['family_price'] ) ) {
@@ -1435,7 +1877,13 @@ class Typolog_Admin {
 	}
 
 
-	
+	/**
+	 * Print attachments metabox for font.
+	 * 
+	 * @access public
+	 * @param mixed $font
+	 * @return void
+	 */
 	function print_font_attachments_box( $font ) {
 		
 		wp_nonce_field( 'typolog_font_attachments_fields', 'typolog_font_attachments_nonce' );
@@ -1450,6 +1898,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save attachment for font.
+	 * 
+	 * @access public
+	 * @param mixed $font_id
+	 * @return void
+	 */
 	function save_font_attachments( $font_id ) {
 		
 		if ( !isset( $_POST['typolog_font_attachments_nonce'] ) || !wp_verify_nonce( $_POST['typolog_font_attachments_nonce'], 'typolog_font_attachments_fields' ) ) {
@@ -1474,6 +1929,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print attachments box for family.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_attachments_field() {
 		
 		$attachments = [];
@@ -1486,6 +1947,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print edit attachments box for family.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_attachments_field( $term ) {
 		
 		$attachments_obj = new Typolog_Attachments();
@@ -1502,6 +1970,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save attachments for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_attachments_field( $term_id ) {
 		
 		if ( isset( $_POST['attachments'] ) && is_array( $_POST['attachments'] ) ) {
@@ -1516,7 +1991,12 @@ class Typolog_Admin {
 		
 	}
 
-
+	/**
+	 * Print PDF field for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_pdf_field() {
 		
 		$pdf = null;
@@ -1529,6 +2009,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print edit PDF field for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_pdf_field( $term ) {
 		
 		$family = new Typolog_Family( $term );
@@ -1545,6 +2032,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save PDF specimen for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_pdf_field( $term_id ) {
 		
 		if ( isset( $_POST['pdf'] ) ) {
@@ -1555,8 +2049,12 @@ class Typolog_Admin {
 		
 	}
 
-
-
+	/**
+	 * Print attachments field for license taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_license_attachments_field() {
 		
 		$attachments = [];
@@ -1569,6 +2067,13 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print edit attachments field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_license_edit_attachments_field($term) {
 		
 		$attachments_obj = new Typolog_Attachments();	
@@ -1585,6 +2090,13 @@ class Typolog_Admin {
 		
 	}
 	
+	/**
+	 * Save attachments field for license taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_license_attachments_field( $term_id ) {
 		
 		if ( isset( $_POST['attachments'] ) && is_array( $_POST['attachments'] ) ) {
@@ -1599,6 +2111,12 @@ class Typolog_Admin {
 		
 	}
 
+	/**
+	 * Print commercial checkbox for family taxonomy.
+	 * 
+	 * @access public
+	 * @return void
+	 */
 	function print_family_commercial_field() {
 		
 	?>
@@ -1611,6 +2129,13 @@ class Typolog_Admin {
 	
 	}
 
+	/**
+	 * Print edit commercial checkbox for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_commercial_field( $term ) {
 		
 		$family_commercial = Typolog_Family_Query::get_meta( $term->term_id, '_commercial' );
@@ -1629,6 +2154,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save commercial checkbox for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_commercial_field( $term_id ) {
 		
 		$family = new Typolog_Family( $term_id );
@@ -1646,6 +2178,13 @@ class Typolog_Admin {
 	}  
 
 
+	/**
+	 * Print font order edit form for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term
+	 * @return void
+	 */
 	function print_family_edit_font_order($term) {
 		
 		$font_order = Typolog_Family_Query::get_font_order( $term->term_id );
@@ -1674,6 +2213,13 @@ class Typolog_Admin {
 	
 	}
 	
+	/**
+	 * Save family order for family taxonomy.
+	 * 
+	 * @access public
+	 * @param mixed $term_id
+	 * @return void
+	 */
 	function save_family_font_order( $term_id ) {
 		
 		if ( isset( $_POST[ 'family_font_order' ] ) ) {
