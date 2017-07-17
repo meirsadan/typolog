@@ -29,7 +29,7 @@ class Typolog_Font_Query {
 
 	}
 	
-	static function get_by_meta( $key, $value ) {
+	static function get_by_meta( $key, $value = null ) {
 		
 		if ( is_array( $key ) ) {
 			
@@ -470,7 +470,7 @@ class Typolog_Font {
 
 	function get_attachments() {
 		
-		return $this->get_meta( '_typolog_attachments' );
+		return $this->get_meta( '_attachments' );
 		
 	}
 

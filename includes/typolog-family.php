@@ -293,7 +293,7 @@ class Typolog_Family {
 
 	function get_attachments() {
 		
-		return $this->get_meta( '_typolog_attachments' );
+		return $this->get_meta( '_attachments' );
 		
 	}
 
