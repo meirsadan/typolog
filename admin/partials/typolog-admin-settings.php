@@ -18,8 +18,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 <?php endif; 
 	
-// 	$this->check_for_stuff();
-	
 ?>	
 	
 	<form method="post" action="options.php" class="typolog-settings-form">
