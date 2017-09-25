@@ -26,7 +26,7 @@ class Typolog_Package_Factory {
 		
 		$upload_dir = wp_upload_dir();
 		
-		$this->products_path = $upload_dir['basedir'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/';
+		$this->products_path = wp_normalize_path( $upload_dir['basedir'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/' ); // normalize for Windows servers
 		
 		$this->products_url = $upload_dir['baseurl'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/';
 				

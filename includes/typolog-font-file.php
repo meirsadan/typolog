@@ -50,11 +50,11 @@ class Typolog_Font_File {
 		
 		$upload_dir = wp_upload_dir();
 		
-		$this->fonts_path = $upload_dir['basedir'] . '/' . TypologOptions()->get( 'fonts_dir' ) . '/';
+		$this->fonts_path = wp_normalize_path( $upload_dir['basedir'] . '/' . TypologOptions()->get( 'fonts_dir' ) . '/' ); // normalize for windows server
 		
 		$this->fonts_url = $upload_dir['baseurl'] . '/' . TypologOptions()->get( 'fonts_dir' ) . '/';
 
-		$this->products_path = $upload_dir['basedir'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/';
+		$this->products_path = wp_normalize_path( $upload_dir['basedir'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/' ); // normalize for windows server
 		
 		$this->products_url = $upload_dir['baseurl'] . '/' . TypologOptions()->get( 'font_products_dir' ) . '/';
 
