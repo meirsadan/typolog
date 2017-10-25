@@ -924,6 +924,8 @@ class Typolog_Product_Factory {
 			
 			$variation_ids = [];
 			
+			// Based on result from the Woocommerce API, Make a new array of variation IDs to store in the font/family
+			
 			if ( isset( $result[ 'create' ] ) ) {
 				
 				foreach( $result[ 'create' ] as $new_variation ) {
@@ -932,10 +934,20 @@ class Typolog_Product_Factory {
 					
 				}
 				
-				$this->update_product_variation_ids( $variations[ 'id' ], $variation_ids, $variations[ 'type' ] );
+			}
+
+			if ( isset( $result[ 'update' ] ) ) {
+				
+				foreach( $result[ 'update' ] as $existing_variation ) {
+					
+					$variation_ids[ $existing_variation[ 'attributes' ][ 0 ][ 'option' ] ] = $existing_variation[ 'id' ]; 
+					
+				}
 				
 			}
 			
+			$this->update_product_variation_ids( $variations[ 'id' ], $variation_ids, $variations[ 'type' ] );
+				
 			typolog_log( 'product_variations_result', $result );
 			
 			$result[ $variations[ 'product_id' ] ] = [
