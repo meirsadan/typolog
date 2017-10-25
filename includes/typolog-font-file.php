@@ -414,11 +414,11 @@ class Typolog_Font_File {
 			
 			$filename = get_the_title( $this->file->ID );
 			
-			$license = Typolog_License_Query::detect_by_filename( $filename );
+			$licenses = Typolog_License_Query::detect_by_filename( $filename );
 			
-			if ( is_object( $license ) ) {
+			if ( count( $licenses ) ) {
 				
-				return $this->set_licenses( [ $license->term_id ] );
+				return $this->set_licenses( $licenses );
 				
 			}
 			

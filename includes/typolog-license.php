@@ -95,6 +95,8 @@ class Typolog_License_Query {
 		
 		$licenses = self::get_all();
 		
+		$res = [];
+		
 		foreach ( $licenses as $license ) {
 			
 			$exts = self::get_meta( $license->term_id, '_extensions' );
@@ -107,7 +109,7 @@ class Typolog_License_Query {
 					
 					if ( strripos( $filename, $ext ) == strlen( $filename ) - strlen( $ext ) ) {
 						
-						return $license;
+						array_push( $res, $license->term_id );
 					}
 					
 				}
@@ -116,7 +118,7 @@ class Typolog_License_Query {
 			
 		}
 		
-		return false;
+		return $res;
 		
 	}
 	
@@ -338,9 +340,14 @@ class Typolog_License {
 	function reset_font_packages($file_ids) {
 		$packages = array();
 		foreach ($file_ids as $file_id) {
-			if ($license = $this->determine_license(get_the_title($file_id))) {
-				wp_set_object_terms($file_id, $license->term_id, 'typolog_license');
-				$packages[$license->slug][] = $file_id;
+			$licenses = $this->determine_license(get_the_title($file_id));
+			if ( count( $licenses ) ) {
+				$license_ids = [];
+				for ( $i = 0; $i < count( $licenses ); $i++ ) {
+					array_push( $license_ids, $licenses[ $i ]->term_id );
+					$packages[ $licenses[ $i ]->slug ][] = $file_id;
+				}
+				wp_set_object_terms($file_id, $license_ids, 'typolog_license');
 			}
 		}
 		return $packages;
@@ -360,29 +367,36 @@ class Typolog_License {
 	}
 	
 	function set_license($file_id, $license_id = null) {
-		if (!$license_id) {
-			if ($license = $this->determine_license(get_the_title($file_id))) {
-				$license_id = $license->term_id;
+		if ( !$license_id ) {
+			$licenses = $this->determine_license( get_the_title( $file_id ) );
+			if ( count( $licenses ) ) {
+				$license_ids = [];
+				for ( $i = 0; $i < count( $licenses ); $i++ ) {
+					array_push( $license_ids, $licenses[ $i ]->term_id );
+				}
 			} else {
 				return false;
 			}
+		} else {
+			$license_ids = [ $license_id ];
 		}
-		return $this->set_licenses($file_id, array($license_id));
+		return $this->set_licenses( $file_id, $license_ids );
 	}
 
 	function determine_license($filename) {
 		$licenses = $this->get_all_licenses();
+		$res = [];
 		foreach ($licenses as $license) {
 			if ($_license_exts = get_term_meta($license->term_id, '_extensions', true)) {
 				$license_exts = explode('|', $_license_exts);
 				foreach ($license_exts as $ext) {
 					if (strripos($filename, $ext) == strlen($filename) - strlen($ext)) {
-						return $license;
+						array_push( $res, $license );
 					}
 				}
 			}
 		}
-		return false;
+		return $res;
 	}
 
 	function unset_license_meta($license_id, $field) {
