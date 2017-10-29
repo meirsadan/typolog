@@ -477,7 +477,7 @@ var Fonts = new FontList;
 		
 		var _unbind = function() {
 			
-			_boundTextFields.change();
+			_boundTextFields.trigger( 'change' );
 			
 			_field.off( 'keyup.unbind' ).add( _boundTextFields ).removeClass( 'bound' );
 			
@@ -493,6 +493,8 @@ var Fonts = new FontList;
 			
 		 	if ( _unbindTimeout ) clearTimeout( _unbindTimeout );
 		 	
+			_field.trigger( 'focus' );
+			
 			_unbind();
 			
 	 	});
@@ -509,7 +511,11 @@ var Fonts = new FontList;
 			 	
 			 	if ( 27 == e.which ) {
 				 	
-			 		unbind();
+				 	e.preventDefault();
+				 	
+				 	_field.trigger( 'focus' );
+			
+			 		_unbind();
 			 		
 			 	}
 			 	
