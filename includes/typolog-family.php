@@ -455,7 +455,7 @@ class Typolog_Family {
 	}
 
 
-	function get_price($license_name) {
+	function get_price($license_name = "") {
 		
 		$price = $this->get_meta( '_price_' . strtolower($license_name) ); // See if a specific family/license pricing exists
 		

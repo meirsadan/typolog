@@ -44,6 +44,22 @@ class Typolog_License_Query {
 		
 	}
 	
+	static function get_licenses_order_array() {
+		
+		$order_array = [];
+		
+		$licenses = self::get_all();
+		
+		foreach ( $licenses as $license ) {
+			
+			$order_array[ get_term_meta( $license->term_id, '_order', true ) ] = $license->slug;
+			
+		}
+		
+		return $order_array;
+		
+	}
+	
 	static function get_all_slugs() {
 
 		$all_licenses = self::get_all();
