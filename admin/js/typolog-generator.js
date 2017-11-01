@@ -161,7 +161,19 @@ var FontList = Backbone.Collection.extend({
 					
 					familyName = parsedFont.names.preferredFamily.en;
 					
-					styleName = parsedFont.names.preferredSubfamily.en;
+					if ( parsedFont.names.preferredSubfamily ) {
+						
+						styleName = parsedFont.names.preferredSubfamily.en;
+					
+					} else if ( parsedFont.names.fontSubfamily ) {
+						
+						styleName = parsedFont.names.fontSubfamily.en;
+						
+					} else {
+						
+						styleName = 'Regular';
+						
+					}
 					
 				} else if ( parsedFont.names.compatibleFullName ) { // some woff files hide the font name under this property
 					
