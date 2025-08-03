@@ -335,7 +335,7 @@ class Typolog_Font_Meta {
 
 	function set_fields( $font ) {
 		
-		foreach ( $meta_field_values as $meta_field_key => $meta_field_value ) {
+		foreach ( $this->meta_fields as $meta_field_key => $meta_field_value ) {
 			
 			$font->set_meta( '_' . $meta_field_key, $meta_field_value );
 			
