@@ -84,7 +84,18 @@ class Typolog_Font_File {
 	
 	function load_by_filename( $filename ) {
 		
-		$this->file = get_page_by_title( $filename, 'OBJECT', 'typolog_file' );
+		$args = [
+			"post_type" => "typolog_file",
+			"post_status" => "publish",
+			"posts_per_page" => 1,
+			"title" => $filename,
+		];
+
+		$query = new WP_Query( $args );
+
+		if ( $query->have_posts() ) {
+			$this->file = $query->post;
+		}
 		
 		return $this->file;
 		
