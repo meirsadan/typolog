@@ -457,11 +457,11 @@ class Typolog_Family {
 
 	function get_price($license_name = "") {
 		
-		$price = $this->get_meta( '_price_' . strtolower($license_name) ); // See if a specific family/license pricing exists
+		$price = floatval( $this->get_meta( '_price_' . strtolower($license_name) ) ); // See if a specific family/license pricing exists
 		
 		if ( (!$price) && ($price !== 0) ) {
 			
-			$price = $this->get_meta( '_price' ); // See if a general family price exists
+			$price = floatval( $this->get_meta( '_price' ) ); // See if a general family price exists
 			
 			if ( (!$price) && ($price !== 0) ) {
 				
@@ -469,7 +469,7 @@ class Typolog_Family {
 					
 					foreach ($fonts as $font) {
 						
-						$price += Typolog_Font_Query::get_price( $font->ID, $license_name ); // Use Font->get_price to calculate total family value
+						$price += floatval( Typolog_Font_Query::get_price( $font->ID, $license_name ) ); // Use Font->get_price to calculate total family value
 						
 					}
 					

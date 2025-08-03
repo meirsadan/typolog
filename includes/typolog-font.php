@@ -733,11 +733,11 @@ class Typolog_Font {
 
 	function get_price( $license_name = "" ) {
 		
-		$price = $this->get_meta( '_price_' . strtolower( $license_name ) ); // Check font meta
+		$price = floatval( $this->get_meta( '_price_' . strtolower( $license_name ) ) ); // Check font meta
 		
 		if ( (!$price) && ($price !== 0) ) {
 			
-			$price = $this->get_meta( '_price' ); // Check font meta for general price
+			$price = floatval( $this->get_meta( '_price' ) ); // Check font meta for general price
 			
 			if ( (!$price) && ($price !== 0) ) {
 				
@@ -747,11 +747,11 @@ class Typolog_Font {
 					
 					if ( is_object( $license ) ) {
 						
-						$price = Typolog_License_Query::get_meta( $license->term_id, '_base_price' ); // Get base price for entire license
+						$price = floatval( Typolog_License_Query::get_meta( $license->term_id, '_base_price' ) ); // Get base price for entire license
 						
 						if ((!$price) && ($price !== 0)) {
 							
-							$price = TypologOptions()->get( 'base_price' ); // Get general base price
+							$price = floatval( TypologOptions()->get( 'base_price' ) ); // Get general base price
 							
 						}
 		
@@ -759,7 +759,7 @@ class Typolog_Font {
 					
 				}
 
-				$price = TypologOptions()->get( 'base_price' ); // Get general base price
+				$price = floatval( TypologOptions()->get( 'base_price' ) ); // Get general base price
 				
 			}
 		}
