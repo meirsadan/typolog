@@ -11,7 +11,7 @@ function tl_font_name( $font_id = null ) {
 	
 	global $post;
 	
-	if ( !$post_id ) $font_id = $post->ID;
+	if ( !$font_id && $post ) $font_id = $post->ID;
 	
 	echo get_the_title( $font_id );
 	
@@ -35,9 +35,9 @@ function tl_fontef_families_js_var() {
 
 function tl_family_name( $font_id = null ) {
 	
-	global $post_id;
+	global $post;
 	
-	if ( !$post_id ) $font_id = $post->ID;
+	if ( !$font_id && $post ) $font_id = $post->ID;
 	
 	$font = new Typolog_Font( $font_id );
 	
