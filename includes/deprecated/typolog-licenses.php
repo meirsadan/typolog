@@ -56,14 +56,14 @@ class Typolog_Licenses {
 	}
 	
 	function get_license_name($license_id) {
-		if ($license = $this->get_term($license_id, 'typolog_license')) {
+		if ($license = get_term($license_id, 'typolog_license')) {
 			return $license->slug;
 		}
 		return false;
 	}
 
 	function get_license_display_name($license_id) {
-		if ($license = $this->get_term($license_id, 'typolog_license')) {
+		if ($license = get_term($license_id, 'typolog_license')) {
 			return $license->name;
 		}
 		return false;
