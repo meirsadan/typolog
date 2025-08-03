@@ -256,7 +256,7 @@ class Typolog_Font_File {
 			
 			$this->set_meta( '_file_url', $file_url );
 			
-			return $file->ID;			
+			return $this->file->ID;			
 			
 		} elseif ( $this->load_by_filename( $filename ) ) { // if it already exists, just replace the file
 			
@@ -264,7 +264,7 @@ class Typolog_Font_File {
 			
 			$this->set_meta( '_file_url', $file_url );
 			
-			return $file->ID;
+			return $this->file->ID;
 			
 		}
 		
