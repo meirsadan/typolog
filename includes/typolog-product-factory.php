@@ -325,7 +325,7 @@ class Typolog_Product_Factory {
 		
 		if ( ($attribute_id == false) || (is_wp_error($attribute_id)) ) { // Check for false or error object
 			
-			return $id; 
+			return $attribute_id; 
 			
 		}
 			
@@ -366,7 +366,7 @@ class Typolog_Product_Factory {
 		
 		if ( ($attribute_id == false) || (is_wp_error($attribute_id)) ) { // Check for false or error object
 			
-			return $id; 
+			return $attribute_id; 
 			
 		}
 			
@@ -458,7 +458,7 @@ class Typolog_Product_Factory {
 		
 		if ( isset( $res['errors'] ) ) {
 			
-			return WP_Error( $res['errors'][0]->code, $res['errors'][0]->message );
+			return new WP_Error( $res['errors'][0]->code, $res['errors'][0]->message );
 			
 		}
 		
