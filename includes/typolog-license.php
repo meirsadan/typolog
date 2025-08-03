@@ -293,6 +293,19 @@ class Typolog_License {
 		
 	}
 	
+	function get_file_licenses($file_id) {
+		if (is_array($licenses = get_the_terms($file_id, 'typolog_license'))) {
+			return $licenses;
+		}
+		return false;
+	}
+
+	function get_all_licenses() {
+		return get_terms('typolog_license', array(
+			'hide_empty' => false
+		));
+	}
+
 	function get_font_package($file_ids, $license_name) {
 		
 		$package = array();
@@ -340,14 +353,14 @@ class Typolog_License {
 	}
 	
 	function get_license_name($license_id) {
-		if ($license = $this->get_term($license_id, 'typolog_license')) {
+		if ($license = get_term($license_id, 'typolog_license')) {
 			return $license->slug;
 		}
 		return false;
 	}
 
 	function get_license_display_name($license_id) {
-		if ($license = $this->get_term($license_id, 'typolog_license')) {
+		if ($license = get_term($license_id, 'typolog_license')) {
 			return $license->name;
 		}
 		return false;
